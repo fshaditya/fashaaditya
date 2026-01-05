@@ -4,98 +4,517 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Pribadi</title>
+  <meta name="description" content="Portofolio pribadi berisi biodata dan proyek: SagaHealth & Website Profile Sekolah SLB Raudhatul Zannah." />
+
+  <!-- Modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    :root{
+      --bg: #0b1220;
+      --bg2: #0f172a;
+      --card: rgba(255,255,255,0.08);
+      --card2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.58);
+      --shadow: 0 14px 40px rgba(0,0,0,0.35);
+      --shadow2: 0 10px 24px rgba(0,0,0,0.28);
+      --radius: 18px;
+      --radius2: 14px;
+      --accent: #60a5fa; /* blue */
+      --accent2:#34d399; /* green */
+      --warn:#fbbf24;
+    }
+
+    *{ box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(96,165,250,0.35), transparent 55%),
+        radial-gradient(900px 600px at 85% 20%, rgba(52,211,153,0.25), transparent 55%),
+        radial-gradient(900px 600px at 70% 90%, rgba(251,191,36,0.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 18px 56px;
+    }
+
+    /* HERO */
+    header{
+      position: relative;
+      padding: 64px 0 28px;
+    }
+    .hero{
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.05));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-inner{
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      padding: 28px;
+      align-items: center;
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 13px;
+      width: fit-content;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(96,165,250,0.16);
+    }
+
+    h1{
+      margin: 12px 0 8px;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 52ch;
+    }
+
+    .cta{
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: var(--shadow2);
+    }
+    .btn:hover{ text-decoration: none; background: rgba(255,255,255,0.09); }
+    .btn.primary{
+      border-color: rgba(96,165,250,0.45);
+      background: linear-gradient(135deg, rgba(96,165,250,0.22), rgba(52,211,153,0.16));
+    }
+    .btn svg{ width: 16px; height: 16px; opacity: 0.9; }
+
+    .side{
+      display: grid;
+      gap: 12px;
+      justify-items: end;
+    }
+    .avatar{
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background:
+        radial-gradient(40px 40px at 30% 30%, rgba(255,255,255,0.25), transparent 60%),
+        linear-gradient(135deg, rgba(96,165,250,0.38), rgba(52,211,153,0.26));
+      box-shadow: 0 18px 40px rgba(0,0,0,0.38);
+    }
+    .mini{
+      width: 100%;
+      max-width: 320px;
+      padding: 14px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+    }
+    .mini strong{ display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .chips{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    /* SECTIONS */
+    .grid{
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+      grid-template-columns: 1fr;
+    }
+
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow2);
+      padding: 22px;
+    }
+
+    .card h2{
+      margin: 0 0 14px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      display:flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .list{
       margin: 0;
       padding: 0;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-    header {
-      background-color: #1e293b;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 10px;
-    }
-    ul {
       list-style: none;
-      padding: 0;
+      display:grid;
+      gap: 10px;
     }
-    li {
+
+    .row{
+      display:flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.16);
+    }
+
+    .icon{
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      flex: 0 0 auto;
+    }
+    .icon svg{ width: 18px; height: 18px; opacity: 0.95; }
+
+    .row .meta{
+      min-width: 0;
+    }
+
+    .label{
+      font-weight: 700;
+      font-size: 13px;
+      margin: 0 0 4px;
+      color: rgba(255,255,255,0.90);
+    }
+
+    .value{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .project{
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+    }
+    .project-head{
+      display:flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
       margin-bottom: 10px;
     }
-    a {
-      color: #2563eb;
-      text-decoration: none;
+
+    .project h3{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: -0.01em;
     }
-    a:hover {
-      text-decoration: underline;
+    .project p{
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
     }
-    footer {
+
+    .links{
+      margin-top: 12px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .link{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.14);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .link:hover{ text-decoration:none; background: rgba(0,0,0,0.18); }
+    .link svg{ width: 16px; height: 16px; opacity: 0.9; }
+
+    footer{
+      margin-top: 26px;
       text-align: center;
-      padding: 20px;
-      color: #666;
+      color: var(--muted2);
+      font-size: 12px;
+      padding: 22px 0 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 820px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .side{ justify-items: start; }
+      .two-col{ grid-template-columns: 1fr; }
+      h1{ font-size: 30px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Nama Lengkap Anda</h1>
-    <p>Profesi / Bidang Keahlian</p>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="badge"><span class="dot"></span> Portofolio • UI/UX • Web • Artikel</div>
+            <h1>Nama Lengkap Anda</h1>
+            <p class="subtitle">Profesi / Bidang Keahlian — tulis ringkasan singkat yang menjelaskan fokus Anda, nilai yang Anda bawa, dan tipe proyek yang Anda kerjakan.</p>
 
-  <section>
-    <h2>Biodata Pribadi</h2>
-    <ul>
-      <li><strong>Nama:</strong> Nama Lengkap</li>
-      <li><strong>Email:</strong> emailanda@email.com</li>
-      <li><strong>Domisili:</strong> Kota, Indonesia</li>
-      <li><strong>Keahlian:</strong> UI/UX Design, Web Development, Penulisan Ilmiah</li>
-      <li><strong>Ringkasan:</strong> Deskripsi singkat tentang diri Anda, minat, dan pengalaman profesional.</li>
-    </ul>
-  </section>
+            <div class="cta">
+              <a class="btn primary" href="mailto:emailanda@email.com" aria-label="Kirim email">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6.5V17.5C4 18.3284 4.67157 19 5.5 19H18.5C19.3284 19 20 18.3284 20 17.5V6.5C20 5.67157 19.3284 5 18.5 5H5.5C4.67157 5 4 5.67157 4 6.5Z" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 7.5L12 12L17.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Email
+              </a>
+              <a class="btn" href="#portfolio" aria-label="Lihat portofolio">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M19 12H5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                Lihat Proyek
+              </a>
+            </div>
+          </div>
 
-  <section>
-    <h2>Portofolio</h2>
-    <ul>
-      <li>
-        <strong>Figma:</strong>
-        <a href="https://www.figma.com/" target="_blank">https://www.figma.com/username</a>
-      </li>
-      <li>
-        <strong>GitHub:</strong>
-        <a href="https://github.com/" target="_blank">https://github.com/username</a>
-      </li>
-      <li>
-        <strong>Google Drive (Artikel):</strong>
-        <a href="#" target="_blank">Link Drive berisi artikel</a>
-      </li>
-      <li>
-        <strong>Website:</strong>
-        <a href="#" target="_blank">https://websiteanda.com</a>
-      </li>
-      <li>
-        <strong>Jurnal Ilmiah:</strong>
-        <a href="#" target="_blank">Link publikasi jurnal</a>
-      </li>
-    </ul>
-  </section>
+          <div class="side">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="mini">
+              <strong>Highlight Keahlian</strong>
+              <div class="chips">
+                <span class="chip">UI/UX</span>
+                <span class="chip">Prototyping</span>
+                <span class="chip">Web</span>
+                <span class="chip">Research</span>
+                <span class="chip">Penulisan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  <footer>
-    <p>© 2026 Portofolio Pribadi</p>
-  </footer>
+    <main class="grid">
+      <section class="card">
+        <h2>
+          Biodata <span class="pill">Tentang Saya</span>
+        </h2>
+
+        <div class="two-col">
+          <ul class="list">
+            <li class="row">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              </div>
+              <div class="meta">
+                <p class="label">Nama</p>
+                <p class="value">Nama Lengkap</p>
+              </div>
+            </li>
+
+            <li class="row">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6.5V17.5C4 18.3284 4.67157 19 5.5 19H18.5C19.3284 19 20 18.3284 20 17.5V6.5C20 5.67157 19.3284 5 18.5 5H5.5C4.67157 5 4 5.67157 4 6.5Z" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 7.5L12 12L17.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="meta">
+                <p class="label">Email</p>
+                <p class="value"><a href="mailto:emailanda@email.com">emailanda@email.com</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="list">
+            <li class="row">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21S18 16.5 18 11.5C18 8.18629 15.3137 5.5 12 5.5C8.68629 5.5 6 8.18629 6 11.5C6 16.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
+              </div>
+              <div class="meta">
+                <p class="label">Domisili</p>
+                <p class="value">Kota, Indonesia</p>
+              </div>
+            </li>
+
+            <li class="row">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L20 6.5V17.5L12 22L4 17.5V6.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 22V12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M20 6.5L12 12L4 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="meta">
+                <p class="label">Keahlian</p>
+                <p class="value">UI/UX Design, Web Development, Penulisan Ilmiah</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 14px;">
+          <div class="row" style="align-items: center;">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 12H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 17H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            </div>
+            <div class="meta">
+              <p class="label">Ringkasan</p>
+              <p class="value">Deskripsi singkat tentang diri Anda, minat, dan pengalaman profesional. Buat 2–3 kalimat yang padat dan jelas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" class="card">
+        <h2>
+          Portofolio <span class="pill">Proyek</span>
+        </h2>
+
+        <div class="project" style="margin-bottom: 14px;">
+          <div class="project-head">
+            <div>
+              <h3>1) SagaHealth</h3>
+              <p>Proyek aplikasi kesehatan. Berisi desain UI/UX, repository pengembangan aplikasi, dan penulisan pendukung.</p>
+            </div>
+            <span class="pill">App</span>
+          </div>
+
+          <div class="links">
+            <a class="link" href="https://www.figma.com/username-sagahealth" target="_blank" rel="noopener noreferrer" aria-label="UI UX Aplikasi SagaHealth di Figma">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3H12.5C14.9853 3 17 5.01472 17 7.5C17 9.98528 14.9853 12 12.5 12H9V3Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12H12.5C14.9853 12 17 14.0147 17 16.5C17 18.9853 14.9853 21 12.5 21H9V12Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 3H9V12H7C4.79086 12 3 10.2091 3 8C3 5.79086 4.79086 3 7 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 12H9V21H7C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12C14.9853 12 17 9.98528 17 7.5C17 5.01472 14.9853 3 12.5 3" stroke="currentColor" stroke-width="0"/></svg>
+              UI UX Aplikasi (Figma)
+            </a>
+
+            <a class="link" href="https://github.com/username/sagahealth" target="_blank" rel="noopener noreferrer" aria-label="Repositories Aplikasi SagaHealth di GitHub">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 19C4 20.5 4 16.5 2 16M16 22V19.13C16.03 18.77 15.98 18.4 15.85 18.07C15.72 17.74 15.52 17.45 15.26 17.2C17.7 16.93 20.27 16 20.27 11.8C20.27 10.73 19.87 9.7 19.15 8.9C19.49 7.99 19.46 6.99 19.07 6.1C19.07 6.1 18.15 5.83 16.07 7.2C14.27 6.7 12.37 6.7 10.57 7.2C8.49 5.83 7.57 6.1 7.57 6.1C7.18 6.99 7.15 7.99 7.49 8.9C6.77 9.7 6.37 10.73 6.37 11.8C6.37 15.99 8.94 16.93 11.38 17.2C11.12 17.45 10.92 17.74 10.79 18.07C10.66 18.4 10.61 18.77 10.64 19.13V22" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Repositories (GitHub)
+            </a>
+
+            <a class="link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Penulisan Pendukung SagaHealth di Google Drive">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 3V8.5H20" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 15.5H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Penulisan Pendukung (Drive)
+            </a>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-head">
+            <div>
+              <h3>2) Website Profile Sekolah SLB Raudhatul Zannah</h3>
+              <p>Website profil sekolah untuk menampilkan informasi, program, dan galeri kegiatan dengan tampilan yang ramah pengguna.</p>
+            </div>
+            <span class="pill">Website</span>
+          </div>
+
+          <div class="links">
+            <a class="link" href="https://slb-raudhatulzannah.com" target="_blank" rel="noopener noreferrer" aria-label="Website SLB Raudhatul Zannah">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><path d="M3.6 9H20.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3.6 15H20.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 3C10 5.5 10 18.5 12 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 3C14 5.5 14 18.5 12 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Website
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="jurnal" class="card">
+        <h2>
+          Jurnal Publikasi <span class="pill">Publikasi</span>
+        </h2>
+
+        <p class="subtitle" style="max-width: 100%; margin-bottom: 14px;">Daftar jurnal yang pernah dipublikasikan. Silakan ganti judul, tahun, dan tautannya sesuai publikasi Anda.</p>
+
+        <ul class="list">
+          <li class="row">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 3V8.5H20" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 15.5H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div class="meta">
+              <p class="label">Judul Jurnal #1 (Tahun)</p>
+              <p class="value"><a href="#" target="_blank" rel="noopener noreferrer">Link publikasi / DOI</a> • Nama konferensi/jurnal (opsional)</p>
+            </div>
+          </li>
+
+          <li class="row">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14.5 3V8.5H20" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 15.5H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <div class="meta">
+              <p class="label">Judul Jurnal #2 (Tahun)</p>
+              <p class="value"><a href="#" target="_blank" rel="noopener noreferrer">Link publikasi / DOI</a> • Nama konferensi/jurnal (opsional)</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>© 2026 Portofolio Pribadi • Dibuat dengan HTML sederhana</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
