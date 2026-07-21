@@ -3,752 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Septiawan Hadi Prasetyo</title>
-  <meta name="description" content="Portofolio pribadi berisi biodata dan proyek: SagaHealth & Website Profile Sekolah SLB Raudhatul Zannah." />
-
-  <!-- Modern fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      /* Neumorphism Design Tokens */
-      --bg: #E0E5EC;
-      --text-primary: #3D4852;
-      --text-muted: #6B7280;
-      --accent: #6C63FF;
-      --accent-light: #8B84FF;
-      --accent-secondary: #38B2AC;
-      
-      /* Shadows (The Physics) */
-      --shadow-light: rgba(255, 255, 255, 0.6);
-      --shadow-dark: rgba(163, 177, 198, 0.7);
-      
-      /* Preset Shadow Combinations */
-      --extruded: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
-      --extruded-hover: 12px 12px 20px var(--shadow-dark), -12px -12px 20px var(--shadow-light);
-      --extruded-sm: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
-      --inset: inset 6px 6px 10px var(--shadow-dark), inset -6px -6px 10px var(--shadow-light);
-      --inset-deep: inset 10px 10px 20px var(--shadow-dark), inset -10px -10px 20px var(--shadow-light);
-      --inset-sm: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light);
-      
-      /* Radius */
-      --radius-lg: 32px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      
-      --transition: 300ms ease-out;
-    }
-
-    *{ box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: "DM Sans", system-ui, -apple-system, sans-serif;
-      color: var(--text-primary);
-      background-color: var(--bg);
-      min-height: 100vh;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    h1, h2, h3, .font-display {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    a { 
-      color: var(--accent); 
-      text-decoration: none; 
-      transition: var(--transition);
-    }
-    a:hover { 
-      color: var(--accent-light);
-      text-decoration: none; 
-    }
-
-    .wrap{
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 18px 56px;
-    }
-
-    /* HERO */
-    header{
-      position: relative;
-      padding: 64px 0 28px;
-    }
-    .hero {
-      border-radius: var(--radius-lg);
-      background: var(--bg);
-      box-shadow: var(--extruded);
-      overflow: hidden;
-      transition: var(--transition);
-    }
-    .hero-inner{
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 22px;
-      padding: 28px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: var(--bg);
-      box-shadow: var(--inset-sm);
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 500;
-      width: fit-content;
-      margin-bottom: 20px;
-    }
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px var(--accent);
-    }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      color: var(--text-primary);
-    }
-    .subtitle {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 1.6;
-      max-width: 52ch;
-    }
-    .subtitle1 {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 11px;
-      opacity: 0.8;
-      line-height: 1.6;
-      max-width: 52ch;
-    }
-
-    .cta{
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 24px;
-      border-radius: var(--radius-md);
-      background: var(--bg);
-      color: var(--text-primary);
-      font-weight: 700;
-      font-size: 14px;
-      box-shadow: var(--extruded-sm);
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--extruded-hover);
-      color: var(--accent);
-    }
-    .btn:active {
-      transform: translateY(1px);
-      box-shadow: var(--inset-sm);
-    }
-    .btn.primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 5px 5px 15px rgba(108, 99, 255, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.1);
-    }
-    .btn.primary:hover {
-      background: var(--accent-light);
-      color: white;
-    }
-    .btn.primary:active {
-      box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .btn svg { width: 18px; height: 18px; }
-
-    .side{
-      display: grid;
-      gap: 12px;
-      justify-items: end;
-    }
-    .avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 999px;
-      padding: 10px;
-      background: var(--bg);
-      box-shadow: var(--extruded);
-      object-fit: cover;
-      display: block;
-      transition: var(--transition);
-    }
-    .avatar:hover {
-      transform: scale(1.05) rotate(5deg);
-    }
-    .mini {
-      width: 100%;
-      max-width: 320px;
-      padding: 20px;
-      border-radius: var(--radius-md);
-      background: var(--bg);
-      box-shadow: var(--inset-deep);
-    }
-    .mini strong{ display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-    .chips{
-      display:flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .chip {
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--bg);
-      box-shadow: var(--extruded-sm);
-      color: var(--text-primary);
-      font-size: 12px;
-      font-weight: 600;
-      white-space: nowrap;
-      transition: var(--transition);
-    }
-    .chip:hover {
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    /* SECTIONS */
-    .grid{
-      display: grid;
-      gap: 18px;
-      margin-top: 18px;
-      grid-template-columns: 1fr;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      background: var(--bg);
-      box-shadow: var(--extruded);
-      padding: 32px;
-      transition: var(--transition);
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--extruded-hover);
-    }
-
-    .card h2 {
-      margin: 0 0 24px;
-      font-size: 24px;
-      color: var(--text-primary);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      background: var(--bg);
-      box-shadow: var(--inset-sm);
-    }
-
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .list{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display:grid;
-      gap: 10px;
-    }
-
-    .row {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      padding: 16px;
-      border-radius: var(--radius-md);
-      background: var(--bg);
-      box-shadow: var(--extruded-sm);
-      transition: var(--transition);
-    }
-    .row:hover {
-      box-shadow: var(--extruded);
-      transform: scale(1.02);
-    }
-
-    .icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      display: grid;
-      place-items: center;
-      background: var(--bg);
-      box-shadow: var(--inset-deep);
-      color: var(--accent);
-      flex: 0 0 auto;
-    }
-    .icon svg{ width: 18px; height: 18px; opacity: 0.95; }
-
-    .row .meta{
-      min-width: 0;
-    }
-
-    .label{
-      font-weight: 700;
-      font-size: 13px;
-      margin: 0 0 4px;
-      color: rgba(15, 23, 42, 0.92);
-    }
-
-    .value{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-      overflow-wrap: anywhere;
-    }
-
-    .project {
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--bg);
-      box-shadow: var(--inset);
-      transition: var(--transition);
-    }
-    .project:hover {
-      box-shadow: var(--inset-deep);
-    }
-    .project-head{
-      display:flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .project h3 {
-      margin: 0;
-      font-size: 18px;
-      color: var(--text-primary);
-      font-weight: 700;
-    }
-    .project p{
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .links{
-      margin-top: 12px;
-      display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--bg);
-      box-shadow: var(--extruded-sm);
-      color: var(--text-primary);
-      font-weight: 700;
-      font-size: 13px;
-      transition: var(--transition);
-    }
-    .link:hover {
-      text-decoration: none;
-      box-shadow: var(--extruded);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-    .link:active {
-      box-shadow: var(--inset-sm);
-      transform: translateY(1px);
-    }
-    .link svg { width: 18px; height: 18px; color: var(--accent); }
-
-    footer {
-      margin-top: 48px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 14px;
-      padding: 32px 0;
-      opacity: 0.8;
-    }
-
-    /* Accessibility focus state */
-    :focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent) !important;
-    }
-
-    /* Responsive */
-    @media (max-width: 820px) {
-      .hero-inner { grid-template-columns: 1fr; padding: 32px; text-align: center; }
-      .side { justify-items: center; order: -1; margin-bottom: 24px; }
-      .two-col { grid-template-columns: 1fr; }
-      .cta { justify-content: center; }
-      h1 { font-size: 32px; }
-      .badge { margin: 0 auto 24px; }
-    }
-    /* Decorative Elements */
-    .bg-circle {
-      position: fixed;
-      z-index: -1;
-      border-radius: 999px;
-      background: var(--bg);
-      box-shadow: var(--extruded);
-      animation: float 6s ease-in-out infinite;
-    }
-    .circle-1 { width: 300px; height: 300px; top: -100px; left: -100px; }
-    .circle-2 { width: 200px; height: 200px; bottom: 10%; right: -50px; animation-delay: -3s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-20px) rotate(10deg); }
-    }
-  </style>
+  <title>Fasha Aditya Febrianto</title>
+  <meta name="description" content="Portofolio Pribadi Fasha Aditya Febrianto - Mahasiswa Teknik Industri ITENAS Bandung Angkatan 2025." />
+  
+  <!-- Industrial Skeuomorphism Design System Stylesheet -->
+  <link rel="stylesheet" href="industrial.css" />
 </head>
 <body>
-  <div class="bg-circle circle-1"></div>
-  <div class="bg-circle circle-2"></div>
-  <div class="wrap">
-    <header>
-      <div class="hero">
-        <div class="hero-inner">
-          <div>
-            <div class="badge"><span class="dot"></span> Portofolio • UI/UX • Web • Artikel</div>
-            <h1>Septiawan Hadi Prasetyo</h1>
-            <p class="subtitle">Junior Development and Research</p>
 
-            <div class="cta">
-              <a class="btn primary" href="mailto:septiawanhadi38@gmail.com?subject=Kontak%20dari%20Portofolio" aria-label="Kirim email">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6.5V17.5C4 18.3284 4.67157 19 5.5 19H18.5C19.3284 19 20 18.3284 20 17.5V6.5C20 5.67157 19.3284 5 18.5 5H5.5C4.67157 5 4 5.67157 4 6.5Z" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 7.5L12 12L17.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Email
-              </a>
-              <a class="btn" href="#portfolio" aria-label="Lihat portofolio">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 5V19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M19 12H5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                Lihat Proyek
-              </a>
-              <button class="btn" type="button" id="copyEmail" aria-label="Salin email">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8V6.5C8 5.67157 8.67157 5 9.5 5H17.5C18.3284 5 19 5.67157 19 6.5V14.5C19 15.3284 18.3284 16 17.5 16H16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6.5 8H14.5C15.3284 8 16 8.67157 16 9.5V17.5C16 18.3284 15.3284 19 14.5 19H6.5C5.67157 19 5 18.3284 5 17.5V9.5C5 8.67157 5.67157 8 6.5 8Z" stroke="currentColor" stroke-width="1.6"/></svg>
-                Salin Email
-              </button>
-            </div>
-            <p class="subtitle1" style="margin-top: 10px; max-width: 100%; color: var(--muted2);">
-              Noted: Jika tombol Email tidak membuka aplikasi email, gunakan tombol <b>Salin Email</b> lalu tempel di Gmail/Outlook.
-            </p>
+  <!-- Ambient Micro-Texture Canvas -->
+  <canvas id="noiseCanvas"></canvas>
+
+  <div class="container">
+    
+    <!-- Top Status Control Bar -->
+    <header class="status-bar">
+      <div class="status-indicator">
+        <span class="led-dot"></span>
+        <span>SYS_STATUS: OPERATIONAL</span>
+      </div>
+      <div class="time-display mono">
+        <span id="liveClock">--:--:-- WIB</span>
+      </div>
+    </header>
+
+    <!-- HERO SECTION & 3D CSS DEVICE -->
+    <section class="card-module">
+      <div class="screw screw-tl"></div>
+      <div class="screw screw-tr"></div>
+      <div class="screw screw-bl"></div>
+      <div class="screw screw-br"></div>
+      <div class="vent-slots">
+        <div class="vent-slot"></div>
+        <div class="vent-slot"></div>
+        <div class="vent-slot"></div>
+      </div>
+
+      <div class="hero-grid">
+        <!-- Hero Left Info -->
+        <div>
+          <div class="hero-tag">
+            <span class="led-dot orange"></span>
+            <span>FASHA ADITYA FEBRIANTO</span>
           </div>
 
-          <div class="side">
-            <img class="avatar" src="septi.jpeg" alt="Foto Septiawan" />
-            <div class="mini">
-              <strong>Highlight Keahlian</strong>
-              <div class="chips">
-                <span class="chip">UI/UX</span>
-                <span class="chip">Prototyping</span>
-                <span class="chip">Web</span>
-                <span class="chip">Research</span>
-                <span class="chip">Penulisan</span>
-              </div>
+          <h1 class="hero-title">Mahasiswa Teknik Industri</h1>
+
+          <p class="hero-subtitle">
+            Mahasiswa <strong>Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung</strong> Angkatan 2025. Berfokus pada sistem manufaktur, optimalisasi proses, ergonomi kerja, dan manajemen operasional industri modern.
+          </p>
+
+          <div class="hero-cta-group">
+            <a class="btn btn-primary" href="mailto:fasha.aditya.febrianto@gmail.com?subject=Kontak%20dari%20Portofolio">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              Email Direct
+            </a>
+            <a class="btn" href="#portfolio">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              Lihat Proyek
+            </a>
+            <button class="btn" id="btnCopyEmail" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Salin Email
+            </button>
+          </div>
+        </div>
+
+        <!-- Hero Right 3D CSS Industrial Device Chassis -->
+        <div class="device-chassis">
+          <div class="device-header">
+            <span class="device-label">CONSOLE UNIT #ITENAS-2025</span>
+            <div class="status-indicator" style="font-size: 0.7rem;">
+              <span class="led-dot"></span>
+              <span>LIVE</span>
+            </div>
+          </div>
+
+          <!-- CRT Display Screen -->
+          <div class="device-screen">
+            <div id="deviceScreenContent">
+              <div class="screen-line accent">&gt; STUDENT: FASHA ADITYA FEBRIANTO</div>
+              <div class="screen-line">&gt; MAJOR: TEKNIK INDUSTRI</div>
+              <div class="screen-line">&gt; CAMPUS: ITENAS BANDUNG</div>
+              <div class="screen-line muted">&gt; BATCH: ANGKATAN 2025</div>
+              <div class="screen-line accent" style="margin-top: 10px;">&gt; STATUS: ACTIVE STUDENT [OPERATIONAL]</div>
+            </div>
+          </div>
+
+          <div class="device-controls">
+            <span class="mono" style="font-size: 0.7rem; color: var(--text-muted);">DIAL TO SWITCH MODE</span>
+            <div class="dial-group">
+              <div class="dial" id="deviceDial" title="Rotate Dial to Switch Terminal Mode"></div>
             </div>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main class="grid">
-      <section class="card">
-        <h2>
-          Biodata <span class="pill">Tentang Saya</span>
-        </h2>
+    <!-- BIODATA CONSOLE SECTION -->
+    <section class="card-module">
+      <div class="screw screw-tl"></div>
+      <div class="screw screw-tr"></div>
+      <div class="screw screw-bl"></div>
+      <div class="screw screw-br"></div>
 
-        <div class="two-col">
-          <ul class="list">
-            <li class="row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="currentColor" stroke-width="1.6"/><path d="M4 20C4 16.6863 7.58172 14 12 14C16.4183 14 20 16.6863 20 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-              </div>
-              <div class="meta">
-                <p class="label">Nama</p>
-                <p class="value">Septiawan Hadi Prasetyo</p>
-              </div>
-            </li>
+      <h2 class="section-title">
+        Biodata Profil
+        <span class="badge-stamped">TENTANG SAYA</span>
+      </h2>
 
-            <li class="row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6.5V17.5C4 18.3284 4.67157 19 5.5 19H18.5C19.3284 19 20 18.3284 20 17.5V6.5C20 5.67157 19.3284 5 18.5 5H5.5C4.67157 5 4 5.67157 4 6.5Z" stroke="currentColor" stroke-width="1.6"/><path d="M6.5 7.5L12 12L17.5 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div class="meta">
-                <p class="label">Email</p>
-                <p class="value"><a href="mailto:septiawanhadi38@gmail.com?subject=Kontak%20dari%20Portofolio">septiawanhadi38@gmail.com</a></p>
-              </div>
-            </li>
-          </ul>
-
-          <ul class="list">
-            <li class="row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21S18 16.5 18 11.5C18 8.18629 15.3137 5.5 12 5.5C8.68629 5.5 6 8.18629 6 11.5C6 16.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.6"/><path d="M12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              </div>
-              <div class="meta">
-                <p class="label">Domisili</p>
-                <p class="value">Ciwidey, Kabupaten Bandung, Jawabarat, Indonesia</p>
-              </div>
-            </li>
-
-            <li class="row">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L20 6.5V17.5L12 22L4 17.5V6.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 22V12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M20 6.5L12 12L4 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div class="meta">
-                <p class="label">Keahlian</p>
-                <p class="value">UI/UX Design, Web Development, Penulisan Ilmiah</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div style="margin-top: 14px;">
-          <div class="row" style="align-items: center;">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 12H17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 17H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 3H18C19.1046 3 20 3.89543 20 5V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V5C4 3.89543 4.89543 3 6 3Z" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div class="hero-grid" style="margin-bottom: 24px;">
+        <div class="grid-2">
+          <div class="data-well">
+            <div class="data-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
-            <div class="meta">
-              <p class="label">Ringkasan</p>
-              <p class="value">Menjembatani celah antara kebutuhan pengguna dan kompleksitas teknologi melalui pendekatan berbasis riset. Sebagai pengembang yang menguasai UI/UX dan Web Development, saya mengedepankan Human-Centered Design dalam setiap baris kode dan elemen visual yang saya buat. Terbiasa menangani proyek dengan integrasi sistem pihak ketiga dan manajemen tim yang adaptif, saya berorientasi pada penciptaan produk yang stabil, estetik, dan skalabel.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" class="card">
-        <h2>
-          Portofolio <span class="pill">Proyek</span>
-        </h2>
-
-        <div class="project" style="margin-bottom: 14px;">
-          <div class="project-head">
             <div>
-              <h3>1) SagaHealth</h3>
-              <p>Proyek aplikasi kesehatan. Berisi desain UI/UX, repository pengembangan aplikasi, dan penulisan pendukung.</p>
+              <div class="data-label">NAMA LENGKAP</div>
+              <div class="data-value">Fasha Aditya Febrianto</div>
             </div>
-            <span class="pill">Website App</span>
           </div>
 
-          <div class="links">
-            <a class="link" href="https://www.figma.com/proto/uBN4ZNniZwLnaX6oNHdmtl/SAGAHEALTH?node-id=92-93&starting-point-node-id=122%3A8&t=Jkmv4hxAp6mAhRpS-1" target="_blank" rel="noopener noreferrer" aria-label="UI UX Aplikasi SagaHealth di Figma">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3H12.5C14.9853 3 17 5.01472 17 7.5C17 9.98528 14.9853 12 12.5 12H9V3Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12H12.5C14.9853 12 17 14.0147 17 16.5C17 18.9853 14.9853 21 12.5 21H9V12Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 3H9V12H7C4.79086 12 3 10.2091 3 8C3 5.79086 4.79086 3 7 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 12H9V21H7C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 12 7 12Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              UI UX Aplikasi (Figma)
-            </a>
-            <a class="link" href="https://drive.google.com/file/d/1S0AQlm2cxpxY5-FkRuZG34DgcVfOk1f3/view?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Repository SagaHealth di Google Drive">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              Repository (Drive)
-            </a>
-            <a class="link" href="https://drive.google.com/drive/folders/1qWlWOjfoRrfwGj52oq9Biy8J09JXzy8D?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Penulisan Pendukung SagaHealth di Google Drive">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              Penulisan Pendukung (Draft)
-            </a>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-head">
+          <div class="data-well">
+            <div class="data-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
             <div>
-              <h3>2) Website Profile Sekolah SLB Raudhatul Zannah</h3>
-              <p>Website profil sekolah untuk menampilkan informasi, program, dan galeri kegiatan dengan tampilan yang ramah pengguna.</p>
+              <div class="data-label">INSTANSI / PROGRAM STUDI</div>
+              <div class="data-value">Teknik Industri ITENAS (2025)</div>
             </div>
-            <span class="pill">Website App</span>
           </div>
 
-          <div class="links">
-            <a class="link" href="https://slbraudhatulzannah.biz.id" target="_blank" rel="noopener noreferrer" aria-label="Website SLB Raudhatul Zannah">Website</a>
-          </div>
-        </div>
-              
-        <div class="project" style="margin-top: 14px;">
-          <div class="project-head">
+          <div class="data-well">
+            <div class="data-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
             <div>
-              <h3>3) Project Event To</h3>
-              <p>Project Event To — repository pengembangan aplikasi/website event.</p>
+              <div class="data-label">EMAIL KONTAK</div>
+              <div class="data-value">
+                <a href="mailto:fasha.aditya.febrianto@gmail.com" style="color:var(--text-primary); text-decoration:underline;">fasha.aditya.febrianto@gmail.com</a>
+              </div>
             </div>
-            <span class="pill">Website App</span>
           </div>
 
-          <div class="links">
-            <a class="link" href="https://github.com/nabilaaabill/evenTO.git" target="_blank" rel="noopener noreferrer" aria-label="Repositories Project Event To di GitHub">Repositories (GitHub)</a>
-          </div>
-        </div>
-
-        <div class="project" style="margin-top: 14px;">
-          <div class="project-head">
+          <div class="data-well">
+            <div class="data-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
             <div>
-              <h3>4) Project Noto</h3>
-              <p>Project Noto — repository pengembangan aplikasi/website pencatatan/notes.</p>
+              <div class="data-label">DOMISILI / KAMPUS</div>
+              <div class="data-value">Bandung, Jawa Barat, Indonesia</div>
             </div>
-            <span class="pill">Desktop App</span>
-          </div>
-
-          <div class="links">
-            <a class="link" href="https://github.com/gilangrp/noto.git" target="_blank" rel="noopener noreferrer" aria-label="Repositories Project Noto di GitHub">Repositories (GitHub)</a>
           </div>
         </div>
 
-         <div class="project" style="margin-top: 14px;">
-          <div class="project-head">
-            <div>
-              <h3>5) Project SafeTana AI</h3>
-              <p>Aplikasi tanggap bencana dan pemeriksaan kesehatan digital berbasis AI dengan integrasi data hazard real-time.</p>
-            </div>
-            <span class="pill">Website App</span>
+        <!-- Avatar Side Profile Housing -->
+        <div style="text-align: center;">
+          <div class="avatar-housing">
+            <img class="avatar-img" src="septi.jpeg" alt="Foto Fasha Aditya Febrianto" />
           </div>
-
-          <div class="links">
-            <a class="link" href="https://safetana.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Website SafeTana AI">Website</a>
-            <a class="link" href="https://drive.google.com/drive/folders/1j_ugjEAoVJOomvJTNCuqJF-Y5jaPIse3?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="Penulisan Pendukung SafeTana AI di Google Drive">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 3H14.5L20 8.5V21H7.5V3Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              Penulisan Pendukung (Draft)
-            </a>
+          <div class="mono" style="font-size: 0.8125rem; font-weight:700; margin-bottom: 8px;">HIGHLIGHT FOKUS</div>
+          <div>
+            <span class="chip">Teknik Industri</span>
+            <span class="chip">ITENAS 2025</span>
+            <span class="chip">Sistem Manufaktur</span>
+            <span class="chip">Ergonomi</span>
+            <span class="chip">Optimalisasi</span>
           </div>
         </div>
+      </div>
 
-        <div class="project" style="margin-top: 14px;">
-          <div class="project-head">
-            <div>
-              <h3>6) Project SIDIK-TI</h3>
-              <p>Platform integrasi manajemen infrastruktur IT, standarisasi URL masking, dan sistem validasi pengadaan departemen secara real-time.</p>
-            </div>
-            <span class="pill">Website App</span>
-          </div>
-
-          <div class="links">
-            <a class="link" href="http://sidik-ti.biz.id" target="_blank" rel="noopener noreferrer" aria-label="Website SIDIK-TI">Website</a>
+      <div class="data-well" style="margin-bottom: 0;">
+        <div class="data-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="17" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="17" y1="18" x2="3" y2="18"></line></svg>
+        </div>
+        <div>
+          <div class="data-label">RINGKASAN PROFIL</div>
+          <div class="data-value" style="font-weight: 500; font-size:0.9375rem; line-height: 1.6;">
+            Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025. Memiliki passion yang kuat dalam rancang bangun sistem industri, analisis efisiensi proses produksi, ergonomi dan keselamatan kerja, serta integrasi teknologi digital untuk meningkatkan produktivitas industri secara holistik.
           </div>
         </div>
-        
-      </section>
+      </div>
+    </section>
 
-      <section id="uiux" class="card">
-        <h2>
-          UI/UX Case Study <span class="pill">Design</span>
-        </h2>
+    <!-- BOLTED PROJECTS RACK SECTION -->
+    <section id="portfolio" class="card-module">
+      <div class="screw screw-tl"></div>
+      <div class="screw screw-tr"></div>
+      <div class="screw screw-bl"></div>
+      <div class="screw screw-br"></div>
 
-        <p class="subtitle" style="max-width: 100%; margin-bottom: 14px;">Kumpulan desain UI/UX untuk beberapa project.</p>
+      <h2 class="section-title">
+        Portofolio & Proyek
+        <span class="badge-stamped">TEKNIK INDUSTRI</span>
+      </h2>
 
-        <div class="project" style="margin-bottom: 14px;">
-          <div class="project-head">
-            <div>
-              <h3>UI/UX — Redesign InDrive</h3>
-              <p>Redesign Apps InDrive</p>
-            </div>
-            <span class="pill">UI/UX</span>
+      <!-- Project 1: Perancangan Sistem Manufaktur -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h3 class="project-title">1) Optimalisasi & Layout Sistem Manufaktur</h3>
+            <p class="project-desc">Studi perancangan alur produksi dan analisis tata letak fasilitas pabrik untuk meminimalkan perpindahan bahan dan meningkatkan efisiensi kerja.</p>
           </div>
-
-          <div class="links">
-            <a class="link" href="https://www.figma.com/proto/PIPzwMaHh9h9vjC0srGamU/IMK-kelompok-2?node-id=138-896&starting-point-node-id=211%3A9861&t=c6Ioc1MLdg581gMo-1" target="_blank" rel="noopener noreferrer" aria-label="UI UX Website SLB di Figma">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3H12.5C14.9853 3 17 5.01472 17 7.5C17 9.98528 14.9853 12 12.5 12H9V3Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12H12.5C14.9853 12 17 14.0147 17 16.5C17 18.9853 14.9853 21 12.5 21H9V12Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 3H9V12H7C4.79086 12 3 10.2091 3 8C3 5.79086 4.79086 3 7 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 12H9V21H7C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 12 7 12Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              File Desain (Figma)
-            </a>
-          </div>
+          <span class="badge-stamped">MANUFACTURING</span>
         </div>
-
-        <div class="project">
-          <div class="project-head">
-            <div>
-              <h3>UI/UX — Project AgrowUp</h3>
-              <p>Rancangan UI Apps Pertanian</p>
-            </div>
-            <span class="pill">UI/UX</span>
-          </div>
-
-          <div class="links">
-            <a class="link" href="https://www.figma.com/proto/2qRIobYWNeiQNXX8dXi2ZX/Project-PKM-Kodamas?node-id=81-14&t=MWVmtSi1anjsfoML-1" target="_blank" rel="noopener noreferrer" aria-label="UI UX AgrowUp di Figma">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3H12.5C14.9853 3 17 5.01472 17 7.5C17 9.98528 14.9853 12 12.5 12H9V3Z" stroke="currentColor" stroke-width="1.6"/><path d="M9 12H12.5C14.9853 12 17 14.0147 17 16.5C17 18.9853 14.9853 21 12.5 21H9V12Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 3H9V12H7C4.79086 12 3 10.2091 3 8C3 5.79086 4.79086 3 7 3Z" stroke="currentColor" stroke-width="1.6"/><path d="M7 12H9V21H7C4.79086 21 3 19.2091 3 17C3 14.7909 4.79086 12 7 12Z" stroke="currentColor" stroke-width="1.6"/></svg>
-              File Desain (Figma)
-            </a>
-          </div>
+        <div class="project-links">
+          <a class="btn btn-sm btn-primary" href="#portfolio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            Studi Kasus & Laporan
+          </a>
         </div>
-      </section>
+      </div>
 
-      <section id="jurnal" class="card">
-        <h2>Jurnal dan Artikel Publikasi <span class="pill">Publikasi</span></h2>
-        <ul class="list">
-          <li class="row"><div class="meta"><p class="label">PENGGUNAAN TEKNOLOGI WEARABLE: UNTUK OPTIMALISASI KEBUTUHAN ATLET DAN MASYARAKAT DALAM BEROLAHRAGA (2024)</p><p class="value"><a href="https://share.google/cIGWU3pLw7lsQMdRJ" target="_blank">Link Jurnal</a> • Jurnal Multidisiplin Inovatif</p></div></li>
-          <li class="row"><div class="meta"><p class="label">Audiensi Pemilu BEM Kampus UPI di Cibiru (2025)</p><p class="value"><a href="https://kd-cibiru.upi.edu/index.php/component/content/article/audiensi-pemilu-bem-kampus-upi-di-cibiru?catid=28&Itemid=101" target="_blank">Link Artikel</a> • UPI Cibiru</p></div></li>
-          <li class="row"><div class="meta"><p class="label">Pemilu BEM Tahun 2025 di Kampus UPI Cibiru: MPU, DPPU, dan KPU Siap Jalankan Tugas (2025)</p><p class="value"><a href="https://kd-cibiru.upi.edu/index.php/component/content/article/pemilu-bem-tahun-2025-di-kampus-upi-cibiru-mpu-dppu-dan-kpu-siap-jalankan-tugas?catid=28&Itemid=101" target="_blank">Link Artikel</a> • UPI Cibiru</p></div></li>
-        </ul>
-      </section>
+      <!-- Project 2: Analisis Ergonomi Kerja -->
+      <div class="project-card">
+        <div class="project-header">
+          <div>
+            <h3 class="project-title">2) Analisis Ergonomi & Postur Kerja</h3>
+            <p class="project-desc">Pengukuran dan evaluasi postur kerja operator menggunakan metode RULA/REBA untuk mengurangi risiko musculoskeletal disorders (MSDs).</p>
+          </div>
+          <span class="badge-stamped">ERGONOMICS</span>
+        </div>
+        <div class="project-links">
+          <a class="btn btn-sm" href="#portfolio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            Dokumen Evaluasi
+          </a>
+        </div>
+      </div>
 
-      <footer>
-        <p>© 2026 Portofolio Pribadi • Dibuat dengan HTML sederhana</p>
-      </footer>
-    </main>
+      <!-- Project 3: Supply Chain & Inventori -->
+      <div class="project-card" style="margin-bottom:0;">
+        <div class="project-header">
+          <div>
+            <h3 class="project-title">3) Perancangan Simulasi Pengendalian Persediaan</h3>
+            <p class="project-desc">Model perhitungan Economic Order Quantity (EOQ) dan Reorder Point (ROP) untuk efisiensi biaya penyimpanan persediaan material.</p>
+          </div>
+          <span class="badge-stamped">SUPPLY CHAIN</span>
+        </div>
+        <div class="project-links">
+          <a class="btn btn-sm" href="#portfolio">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            Simulasi Data
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER TERMINAL -->
+    <footer class="footer-terminal">
+      <p>© 2026 INDUSTRIAL CONSOLE • FASHA ADITYA FEBRIANTO • TEKNIK INDUSTRI ITENAS '25</p>
+      <p style="font-size: 0.75rem; margin-top: 4px; opacity: 0.7;">BUILT WITH TACTILE INDUSTRIAL REALISM DESIGN SYSTEM</p>
+    </footer>
+
   </div>
-  <script>
-    // Fallback: beberapa browser/perangkat memblokir mailto jika tidak ada aplikasi email default.
-    // Tombol ini membantu user tetap bisa menghubungi dengan menyalin alamat email.
-    (function () {
-      const email = 'septiawanhadi38@gmail.com';
-      const btn = document.getElementById('copyEmail');
-      if (!btn) return;
 
-      btn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(email);
-          const originalText = btn.innerHTML;
-          btn.innerHTML = 'Tersalin ✓';
-          btn.style.boxShadow = 'var(--inset-sm)';
-          btn.style.color = 'var(--accent-secondary)';
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.boxShadow = '';
-            btn.style.color = '';
-          }, 2000);
-        } catch (e) {
-          // fallback
-          const temp = document.createElement('textarea');
-          temp.value = email;
-          document.body.appendChild(temp);
-          temp.select();
-          document.execCommand('copy');
-          document.body.removeChild(temp);
-          btn.innerHTML = 'Tersalin ✓';
-          setTimeout(() => (btn.innerHTML = 'Salin Email'), 2000);
-        }
-      });
-    })();
-  </script>
+  <!-- Industrial Skeuomorphism Interaction Engine -->
+  <script src="industrial.js"></script>
 </body>
 </html>
