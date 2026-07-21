@@ -177,35 +177,37 @@ function initDeviceTerminal() {
 }
 
 /**
- * Interactive Certificate Lightbox Modal Engine
+ * Interactive Certificate Lightbox Modal Engine with Live Iframe Viewer
  */
 function initCertificateModal() {
   const cards = document.querySelectorAll('.cert-card');
   const modal = document.getElementById('certModal');
   const closeBtn = document.getElementById('closeCertModal');
   const modalTitle = document.getElementById('modalCertTitle');
-  const modalContent = document.getElementById('modalCertContent');
+  const modalMeta = document.getElementById('modalCertMeta');
+  const modalIframe = document.getElementById('modalIframe');
   const modalLink = document.getElementById('modalCertLink');
 
   if (!modal || !cards.length) return;
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      const title = card.getAttribute('data-title') || 'Sertifikat Kompetensi';
+      const title = card.getAttribute('data-title') || 'Sertifikat Resmi';
       const issuer = card.getAttribute('data-issuer') || 'Teknik Industri ITENAS';
       const certId = card.getAttribute('data-id') || 'CERT-2025-01';
       const date = card.getAttribute('data-date') || '2025';
       const driveUrl = card.getAttribute('data-url') || 'https://drive.google.com/drive/folders/1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08?usp=drive_link';
-      const desc = card.getAttribute('data-desc') || 'Sertifikat resmi terverifikasi di Cloud Storage.';
 
       modalTitle.textContent = title;
-      modalContent.innerHTML = `
-        <div class="screen-line accent">&gt; DOCUMENT ID : ${certId}</div>
-        <div class="screen-line">&gt; ISSUER      : ${issuer}</div>
-        <div class="screen-line">&gt; ISSUED DATE : ${date}</div>
-        <div class="screen-line muted">&gt; DESKRIPSI   : ${desc}</div>
-        <div class="screen-line accent" style="margin-top: 12px;">&gt; VERIFICATION : AUTHENTIC & VALIDATED [100%]</div>
-      `;
+      if (modalMeta) {
+        modalMeta.textContent = `${certId} • ${issuer} (${date})`;
+      }
+
+      // Load embedded Google Drive viewer in iframe
+      const embedUrl = 'https://drive.google.com/embeddedfolderview?id=1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08#grid';
+      if (modalIframe) {
+        modalIframe.src = embedUrl;
+      }
 
       if (modalLink) {
         modalLink.href = driveUrl;
@@ -215,21 +217,26 @@ function initCertificateModal() {
     });
   });
 
+  function closeModal() {
+    modal.classList.remove('active');
+    if (modalIframe) {
+      modalIframe.src = 'about:blank';
+    }
+  }
+
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
+    closeBtn.addEventListener('click', closeModal);
   }
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.classList.remove('active');
+      closeModal();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
+      closeModal();
     }
   });
 }
