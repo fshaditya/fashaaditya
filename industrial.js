@@ -177,7 +177,7 @@ function initDeviceTerminal() {
 }
 
 /**
- * Interactive Certificate Lightbox Modal Engine with Live Iframe Viewer
+ * Interactive Certificate Lightbox Modal Engine with Live Per-File Embedded Viewer
  */
 function initCertificateModal() {
   const cards = document.querySelectorAll('.cert-card');
@@ -191,20 +191,23 @@ function initCertificateModal() {
   if (!modal || !cards.length) return;
 
   cards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      // Prevent opening modal if direct link inside card was clicked
+      if (e.target.closest('a')) return;
+
       const title = card.getAttribute('data-title') || 'Sertifikat Resmi';
       const issuer = card.getAttribute('data-issuer') || 'Teknik Industri ITENAS';
       const certId = card.getAttribute('data-id') || 'CERT-2025-01';
       const date = card.getAttribute('data-date') || '2025';
       const driveUrl = card.getAttribute('data-url') || 'https://drive.google.com/drive/folders/1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08?usp=drive_link';
+      const embedUrl = card.getAttribute('data-embed') || 'https://drive.google.com/embeddedfolderview?id=1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08#grid';
 
       modalTitle.textContent = title;
       if (modalMeta) {
         modalMeta.textContent = `${certId} • ${issuer} (${date})`;
       }
 
-      // Load embedded Google Drive viewer in iframe
-      const embedUrl = 'https://drive.google.com/embeddedfolderview?id=1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08#grid';
+      // Load specific file embed viewer for this card
       if (modalIframe) {
         modalIframe.src = embedUrl;
       }
