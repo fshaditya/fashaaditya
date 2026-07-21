@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initTactilePhysics();
   initDeviceTerminal();
+  initCertificateModal();
 });
 
 /**
@@ -172,5 +173,63 @@ function initDeviceTerminal() {
     currentIndex = (currentIndex + 1) % screens.length;
     screenContent.innerHTML = screens[currentIndex];
     dial.style.transform = `rotate(${currentIndex * 120}deg)`;
+  });
+}
+
+/**
+ * Interactive Certificate Lightbox Modal Engine
+ */
+function initCertificateModal() {
+  const cards = document.querySelectorAll('.cert-card');
+  const modal = document.getElementById('certModal');
+  const closeBtn = document.getElementById('closeCertModal');
+  const modalTitle = document.getElementById('modalCertTitle');
+  const modalContent = document.getElementById('modalCertContent');
+  const modalLink = document.getElementById('modalCertLink');
+
+  if (!modal || !cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.getAttribute('data-title') || 'Sertifikat Kompetensi';
+      const issuer = card.getAttribute('data-issuer') || 'Teknik Industri ITENAS';
+      const certId = card.getAttribute('data-id') || 'CERT-2025-01';
+      const date = card.getAttribute('data-date') || '2025';
+      const driveUrl = card.getAttribute('data-url') || 'https://drive.google.com/drive/folders/1NMRkNoqh_d0V816dMV6eWo6TvrLxkm08?usp=drive_link';
+      const desc = card.getAttribute('data-desc') || 'Sertifikat resmi terverifikasi di Cloud Storage.';
+
+      modalTitle.textContent = title;
+      modalContent.innerHTML = `
+        <div class="screen-line accent">&gt; DOCUMENT ID : ${certId}</div>
+        <div class="screen-line">&gt; ISSUER      : ${issuer}</div>
+        <div class="screen-line">&gt; ISSUED DATE : ${date}</div>
+        <div class="screen-line muted">&gt; DESKRIPSI   : ${desc}</div>
+        <div class="screen-line accent" style="margin-top: 12px;">&gt; VERIFICATION : AUTHENTIC & VALIDATED [100%]</div>
+      `;
+
+      if (modalLink) {
+        modalLink.href = driveUrl;
+      }
+
+      modal.classList.add('active');
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      modal.classList.remove('active');
+    }
   });
 }
