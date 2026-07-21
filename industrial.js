@@ -77,7 +77,7 @@ function initClock() {
  */
 function initCopyEmail() {
   const btn = document.getElementById('btnCopyEmail');
-  const emailStr = 'fasha.aditya.febrianto@gmail.com';
+  const emailStr = 'fshaditya@gmail.com';
 
   if (!btn) return;
 
