@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae & Resume - Fasha Aditya Febrianto</title>
+  <meta name="description" content="Dokumen Resmi Curriculum Vitae dan Resume Fasha Aditya Febrianto - Teknik Industri ITENAS Bandung." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0284c7;
+      --accent-warm: #b45309;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --bg-page: #f1f5f9;
+      --bg-paper: #ffffff;
+      --border-color: #e2e8f0;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.5;
+      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Floating Navigation / Control Bar */
+    .top-controls {
+      max-width: 860px;
+      margin: 0 auto 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border-color);
+      background: var(--bg-paper);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .btn:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: #1e293b;
+      color: #ffffff;
+    }
+
+    .doc-toggle {
+      display: flex;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .doc-toggle button {
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .doc-toggle button.active {
+      background: var(--bg-paper);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    /* Paper Container (A4 Proportions) */
+    .paper-sheet {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-paper);
+      padding: 56px 64px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    /* Header Profile */
+    .header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .name-title h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .name-title .subtitle {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 6px;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 24px;
+    }
+
+    .section-heading {
+      font-size: 0.875rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 1.5px solid var(--border-color);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-heading::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Content Typography */
+    .summary-text {
+      font-size: 0.875rem;
+      color: var(--secondary);
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Entry Item */
+    .entry-item {
+      margin-bottom: 14px;
+    }
+
+    .entry-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .entry-date {
+      font-size: 0.8125rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .entry-subtitle {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .entry-desc {
+      font-size: 0.84rem;
+      color: var(--secondary);
+      line-height: 1.5;
+    }
+
+    .entry-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 4px;
+    }
+
+    .entry-list li {
+      font-size: 0.84rem;
+      color: var(--secondary);
+      margin-bottom: 3px;
+      line-height: 1.45;
+    }
+
+    /* Two Columns Grid for Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-cat-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .skill-cat-content {
+      font-size: 0.8125rem;
+      color: var(--secondary);
+      line-height: 1.4;
+    }
+
+    /* Certifications Grid */
+    .certs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8125rem;
+    }
+
+    .certs-table th {
+      text-align: left;
+      padding: 6px 8px;
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .certs-table td {
+      padding: 7px 8px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--secondary);
+    }
+
+    .certs-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .cert-link-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cert-link-btn:hover {
+      text-decoration: underline;
+    }
+
+    .badge-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: #dcfce7;
+      color: #166534;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+
+    /* PRINT SPECIFIC STYLES FOR CLEAN PDF GENERATION */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .paper-sheet {
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      .section {
+        page-break-inside: avoid;
+        margin-bottom: 18px !important;
+      }
+
+      .skill-category {
+        border-color: #cbd5e1 !important;
+        background: #fafafa !important;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .paper-sheet {
+        padding: 32px 24px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info {
+        text-align: left;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Controls & Actions (Not Printed) -->
+  <div class="top-controls no-print">
+    <a href="index.html" class="btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Kembali ke Portofolio
+    </a>
+
+    <div class="doc-toggle">
+      <button id="btnCv" class="active" onclick="switchMode('cv')">Curriculum Vitae (Lengkap)</button>
+      <button id="btnResume" onclick="switchMode('resume')">Resume (Ringkas 1-Hlm)</button>
+    </div>
+
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Cetak / Simpan PDF
+    </button>
+  </div>
+
+  <!-- A4 Printable Paper -->
+  <main class="paper-sheet" id="printableDoc">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="name-title">
+        <h1 id="docHeadingName">FASHA ADITYA FEBRIANTO</h1>
+        <div class="subtitle">Mahasiswa Teknik Industri • Institut Teknologi Nasional (ITENAS) Bandung</div>
+      </div>
+      <div class="contact-info">
+        <div>Bandung, Jawa Barat, Indonesia</div>
+        <div><a href="mailto:fshaditya@gmail.com">fshaditya@gmail.com</a></div>
+        <div><a href="https://github.com/fshaditya/fashaaditya" target="_blank">github.com/fshaditya</a></div>
+        <div><a href="https://fshaditya.github.io/fashaaditya/" target="_blank">fshaditya.github.io</a></div>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="section">
+      <h2 class="section-heading">Ringkasan Profesional</h2>
+      <p class="summary-text" id="docSummary">
+        Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus keilmuan pada <strong>Perancangan Sistem Manufaktur</strong>, <strong>Analisis Ergonomi & Postur Kerja</strong>, <strong>Supply Chain & Manajemen Persediaan</strong>, serta <strong>Analisis Data Industri</strong>. Berpengalaman aktif dalam organisasi teknologi dan kepanitiaan internasional seperti Google Developer Groups (GDG) On Campus dan BIG FAIR CAYE ASEAN. Memiliki sertifikasi terverifikasi di bidang Data Analytics (Google Skillshop), Pemrograman Python (Dicoding), dan Artificial Intelligence. Terampil memadukan pendekatan analisis kuantitatif dengan pemecahan masalah operasional industri.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-heading">Pendidikan</h2>
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">Institut Teknologi Nasional (ITENAS), Bandung</span>
+          <span class="entry-date">2025 – Sekarang</span>
+        </div>
+        <div class="entry-subtitle">Sarjana Teknik (S1) - Teknik Industri</div>
+        <ul class="entry-list">
+          <li><strong>Konsentrasi & Relevansi</strong>: Perancangan Tata Letak Fasilitas Pabrik, Analisis Ergonomi & Postur Kerja, Pengendalian Persediaan (EOQ/ROP), Riset Operasional, K3 Industri, dan Pengendalian Mutu.</li>
+          <li><strong>Aktivitas Kampus</strong>: Anggota Aktif Google Developer Groups (GDG) On Campus ITENAS, Panitia Program BIG FAIR.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Core Skills -->
+    <section class="section">
+      <h2 class="section-heading">Keahlian Utama & Kompetensi</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title">Teknik Industri & Operasional</div>
+          <div class="skill-cat-content">Tata Letak Pabrik (Plant Layout), Ergonomi (RULA/REBA, Work Study), Manajemen Persediaan (EOQ, ROP), Simulasi Manufaktur, Keselamatan & Kesehatan Kerja (K3).</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Data & Pemrograman</div>
+          <div class="skill-cat-content">Google Data Analytics, Pemrograman Python (Dicoding Certified), Spreadsheet Modeling & Stok Persediaan, Dasar-dasar Artificial Intelligence.</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Kepemimpinan & Organisasi</div>
+          <div class="skill-cat-content">Public Speaking Terverifikasi, Manajemen Human Capital, Pengelolaan Acara Skala Regional & Internasional, Kolaborasi Tim Multidisiplin.</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Komunikasi & Bahasa</div>
+          <div class="skill-cat-content">Bahasa Indonesia (Native), Bahasa Inggris (Profesional & Konversasional), Content Creation & Media Komunikasi.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section class="section">
+      <h2 class="section-heading">Proyek & Studi Teknik Industri</h2>
+      
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">1. Optimalisasi & Tata Letak Sistem Manufaktur (Plant Layout)</span>
+          <span class="entry-date">2025</span>
+        </div>
+        <div class="entry-subtitle">Departemen Teknik Industri ITENAS</div>
+        <p class="entry-desc">
+          Merancang usulan tata letak fasilitas pabrik dan alur stasiun kerja manufaktur untuk meminimalkan perpindahan material (<em>material handling</em>) dan mengeliminasi waktu tunggu/<em>bottleneck</em>. Menerapkan analisis hubungan kedekatan aktivitas (ARC) untuk memaksimalkan efisiensi lantai produksi.
+        </p>
+      </div>
+
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">2. Analisis Ergonomi & Evaluasi Postur Kerja (RULA/REBA)</span>
+          <span class="entry-date">2025</span>
+        </div>
+        <div class="entry-subtitle">Laboratorium Ergonomi & Work Study ITENAS</div>
+        <p class="entry-desc">
+          Melakukan pengukuran postur tubuh kerja operator menggunakan metode RULA dan REBA untuk mendeteksi tingkat risiko keluhan musculoskeletal (MSDs). Merumuskan perbaikan teknis pada meja kerja dan alat bantu untuk menciptakan stasiun kerja yang aman dan produktif.
+        </p>
+      </div>
+
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">3. Pemodelan Simulasi Pengendalian Persediaan (Supply Chain)</span>
+          <span class="entry-date">2025</span>
+        </div>
+        <div class="entry-subtitle">Industrial Supply Chain Simulation</div>
+        <p class="entry-desc">
+          Membangun formula perhitungan Economic Order Quantity (EOQ) dan Reorder Point (ROP) dengan mempertimbangkan variabilitas permintaan serta lead time pemesanan, sehingga mampu menekan biaya penyimpanan gudang (<em>holding cost</em>) secara terukur.
+        </p>
+      </div>
+    </section>
+
+    <!-- Organizational Experience -->
+    <section class="section">
+      <h2 class="section-heading">Pengalaman Organisasi & Kepanitiaan</h2>
+      
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">Google Developer Groups (GDG) On Campus ITENAS</span>
+          <span class="entry-date">2025 – Sekarang</span>
+        </div>
+        <div class="entry-subtitle">Active Member</div>
+        <ul class="entry-list">
+          <li>Berpartisipasi aktif dalam sesi pelatihan teknologi, pengembangan solusi digital, dan jaringan komunitas developer di lingkungan kampus.</li>
+        </ul>
+      </div>
+
+      <div class="entry-item">
+        <div class="entry-header">
+          <span class="entry-title">Kepanitiaan Program BIG FAIR ITENAS</span>
+          <span class="entry-date">2025 – 2026</span>
+        </div>
+        <div class="entry-subtitle">Divisi Human Capital, Public Speaking & Content Creator</div>
+        <ul class="entry-list">
+          <li>Mendapatkan sertifikat <em>Human Capital Excellence</em> atas kontribusi dalam pengelolaan koordinasi sumber daya panitia acara.</li>
+          <li>Menjalankan peran <em>public speaker</em> dan menyusun konten media kreatif untuk mempromosikan kegiatan kepada ribuan peserta.</li>
+        </ul>
+      </div>
+
+      <div class="entry-item" id="cayeOrgItem">
+        <div class="entry-header">
+          <span class="entry-title">Delegasi BIG FAIR CAYE ASEAN 2026 (Singapore & Malaysia)</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-subtitle">Peserta Program Internasional</div>
+        <ul class="entry-list">
+          <li>Mengikuti rangkaian forum pemuda dan kewirausahaan lintas negara ASEAN di Singapura dan Malaysia untuk memperluas perspektif bisnis dan industri global.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Verified Certifications (Table) -->
+    <section class="section" id="certSection">
+      <h2 class="section-heading">Sertifikasi & Kredensial Terverifikasi (10 Kredensial)</h2>
+      
+      <table class="certs-table">
+        <thead>
+          <tr>
+            <th style="width: 48%;">Nama Sertifikasi</th>
+            <th style="width: 32%;">Lembaga Penerbit</th>
+            <th style="width: 20%; text-align: right;">Aksi File</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google Data Analytics Course</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>Google Skillshop</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1hQkM6yd78QQE0KeuipHmFMIUmXJR2X3k/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>Human Capital Excellence - BIG FAIR</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>ITENAS Bandung • BIG FAIR</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1AwF6GE4XygJX2gHLUqdujcu7x0l6jWMY/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>AI for Everyone Course</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>AI Competency Certification</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1s2Tji65xz3at8DX0PGcjhQk3aYx36Mc8/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>BIG FAIR CAYE ASEAN 2026 Singapore & Malaysia</strong> <span class="badge-tag">INTERNATIONAL</span></td>
+            <td>CAYE ASEAN • BIG FAIR</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1sfZnvro_J5rs-0GWlVSwCT5T4LZNnzXe/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>GDG On Campus Active Membership</strong> <span class="badge-tag">MEMBER</span></td>
+            <td>Google Developer Groups On Campus</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1VuibRHMvgbay4p79zuobTNQtntBlTZsj/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>POLBAN Entrepreneur Day 2025</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>Politeknik Negeri Bandung (POLBAN)</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1uwv7QlUxdbpQmKJaEPy2AFpfuhZ5uFAg/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>Public Speaking Certification</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>BIG FAIR • ITENAS</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1_fgOT5GQrYrwQToHMEYpVJ7Act9jIZHg/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>Content Creator Certification</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>BIG FAIR • ITENAS</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1F8uiuYwzgSvdBD-YmHnsC8Jrgkd05D9z/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>Memulai Pemrograman dengan Python</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>Dicoding Academy</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1ii_CBkfaI_j6_Nj5TuOEjvV1DkopGvrE/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+          <tr>
+            <td><strong>Introduction to Financial Literacy</strong> <span class="badge-tag">VERIFIED</span></td>
+            <td>Dicoding Academy</td>
+            <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1z7JdU5oowoytfx7_3F5VvTEYV0njy71h/view?usp=drive_link" target="_blank">Lihat File ↗</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script>
+    function switchMode(mode) {
+      const btnCv = document.getElementById('btnCv');
+      const btnResume = document.getElementById('btnResume');
+      const certSection = document.getElementById('certSection');
+      const docSummary = document.getElementById('docSummary');
+      const cayeOrgItem = document.getElementById('cayeOrgItem');
+
+      if (mode === 'resume') {
+        btnResume.classList.add('active');
+        btnCv.classList.remove('active');
+        document.title = "Resume - Fasha Aditya Febrianto";
+
+        // Compact summary for Resume
+        docSummary.innerHTML = "Mahasiswa Teknik Industri ITENAS Bandung angkatan 2025 dengan fokus pada optimalisasi sistem manufaktur, analisis ergonomi (RULA/REBA), supply chain (EOQ/ROP), dan analisis data industri. Memiliki sertifikasi Google Data Analytics, Python, serta aktif di Google Developer Groups (GDG) On Campus dan forum internasional CAYE ASEAN.";
+      } else {
+        btnCv.classList.add('active');
+        btnResume.classList.remove('active');
+        document.title = "Curriculum Vitae - Fasha Aditya Febrianto";
+
+        // Comprehensive summary for CV
+        docSummary.innerHTML = "Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus keilmuan pada <strong>Perancangan Sistem Manufaktur</strong>, <strong>Analisis Ergonomi & Postur Kerja</strong>, <strong>Supply Chain & Manajemen Persediaan</strong>, serta <strong>Analisis Data Industri</strong>. Berpengalaman aktif dalam organisasi teknologi dan kepanitiaan internasional seperti Google Developer Groups (GDG) On Campus dan BIG FAIR CAYE ASEAN. Memiliki sertifikasi terverifikasi di bidang Data Analytics (Google Skillshop), Pemrograman Python (Dicoding), dan Artificial Intelligence. Terampil memadukan pendekatan analisis kuantitatif dengan pemecahan masalah operasional industri.";
+      }
+    }
+  </script>
+</body>
+</html>
