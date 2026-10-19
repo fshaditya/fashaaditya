@@ -397,8 +397,9 @@
     </a>
 
     <div class="doc-toggle">
-      <button id="btnCv" class="active" onclick="switchMode('cv')">Curriculum Vitae (Lengkap)</button>
-      <button id="btnResume" onclick="switchMode('resume')">Resume (Ringkas 1-Hlm)</button>
+      <button id="btnCv" class="active" onclick="switchMode('cv')">CV (Lengkap)</button>
+      <button id="btnResume" onclick="switchMode('resume')">Resume (ID)</button>
+      <button id="btnResumeEn" onclick="switchMode('resume-en')">Resume (English)</button>
     </div>
 
     <button onclick="window.print()" class="btn btn-primary">
@@ -409,6 +410,7 @@
 
   <!-- A4 Printable Paper -->
   <main class="paper-sheet" id="printableDoc">
+    <div id="viewId">
     
     <!-- Header -->
     <header class="header">
@@ -614,6 +616,194 @@
         </tbody>
       </table>
     </section>
+    </div> <!-- end of viewId -->
+
+    <!-- VIEW ENGLISH (RESUME EN) -->
+    <div id="viewEn" style="display: none;">
+      <!-- Header EN -->
+      <header class="header">
+        <div class="name-title">
+          <h1>FASHA ADITYA FEBRIANTO</h1>
+          <div class="subtitle">Industrial Engineering Undergraduate • National Institute of Technology (ITENAS) Bandung</div>
+        </div>
+        <div class="contact-info">
+          <div>Bandung, Indonesia</div>
+          <div><a href="mailto:fshaditya@gmail.com">fshaditya@gmail.com</a></div>
+          <div><a href="https://github.com/fshaditya/fashaaditya" target="_blank">github.com/fshaditya</a></div>
+          <div><a href="https://fshaditya.github.io/fashaaditya/" target="_blank">fshaditya.github.io</a></div>
+        </div>
+      </header>
+
+      <!-- Professional Summary EN -->
+      <section class="section">
+        <h2 class="section-heading">Professional Summary</h2>
+        <p class="summary-text">
+          Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Bandung (Class of 2025) with specialized interests in <strong>Manufacturing Systems Optimization</strong>, <strong>Ergonomic Workstation Assessment</strong>, <strong>Supply Chain &amp; Inventory Management</strong>, and <strong>Industrial Data Analytics</strong>. Certified in Google Data Analytics, Python programming, and Artificial Intelligence fundamentals. Actively engaged in Google Developer Groups (GDG) On Campus and regional international initiatives including CAYE ASEAN. Demonstrates a strong ability to combine quantitative analytical models with practical industrial solutions.
+        </p>
+      </section>
+
+      <!-- Education EN -->
+      <section class="section">
+        <h2 class="section-heading">Education</h2>
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">Institut Teknologi Nasional (ITENAS), Bandung, Indonesia</span>
+            <span class="entry-date">2025 – Present</span>
+          </div>
+          <div class="entry-subtitle">Bachelor of Science (B.S.) in Industrial Engineering</div>
+          <ul class="entry-list">
+            <li><strong>Relevant Coursework</strong>: Facility Layout &amp; Plant Design, Ergonomics &amp; Biomechanical Posture Assessment (RULA/REBA), Operations Research, Inventory Control &amp; Supply Chain Management, Statistical Quality Control.</li>
+            <li><strong>Campus Involvements</strong>: Active Member at Google Developer Groups (GDG) On Campus ITENAS, Committee Member at BIG FAIR ITENAS.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Technical & Professional Skills EN -->
+      <section class="section">
+        <h2 class="section-heading">Technical &amp; Professional Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-cat-title">Industrial Engineering</div>
+            <div class="skill-cat-content">Plant Layout Optimization (ARC), Ergonomic Risk Assessment (RULA/REBA), Motion &amp; Time Study, Inventory Modeling (EOQ, ROP, Safety Stock), Occupational Health &amp; Safety (K3), Quality Management.</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-title">Data Analytics &amp; Tools</div>
+            <div class="skill-cat-content">Google Data Analytics, Python Programming (Dicoding Certified), Advanced Spreadsheet Modeling, AI Fundamentals.</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-title">Interpersonal &amp; Management</div>
+            <div class="skill-cat-content">Public Speaking, Cross-functional Team Collaboration, Human Capital Coordination, Event Execution.</div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-title">Languages</div>
+            <div class="skill-cat-content">Indonesian (Native), English (Professional Working Proficiency).</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected Projects EN -->
+      <section class="section">
+        <h2 class="section-heading">Selected Engineering Projects</h2>
+        
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">Manufacturing Facility &amp; Plant Layout Optimization</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-subtitle">ITENAS Bandung</div>
+          <p class="entry-desc">
+            Designed an optimized production line layout utilizing Activity Relationship Charts (ARC) to minimize material handling distances and eliminate operational bottlenecks, enhancing floor space utilization and throughput rate.
+          </p>
+        </div>
+
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">Ergonomic Posture Assessment &amp; Workstation Redesign</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-subtitle">Ergonomics &amp; Work Study Laboratory ITENAS</div>
+          <p class="entry-desc">
+            Evaluated industrial operator postures using RULA and REBA methodologies to identify musculoskeletal disorder (MSD) risk factors. Formulated ergonomic workstation interventions to ensure operator safety and sustain long-term productivity.
+          </p>
+        </div>
+
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">Supply Chain Inventory Simulation &amp; Modeling</span>
+            <span class="entry-date">2025</span>
+          </div>
+          <div class="entry-subtitle">Industrial Supply Chain Simulation</div>
+          <p class="entry-desc">
+            Developed mathematical inventory control models utilizing Economic Order Quantity (EOQ) and Reorder Point (ROP) equations to balance procurement and holding costs under demand volatility.
+          </p>
+        </div>
+      </section>
+
+      <!-- Leadership & Organizational Experience EN -->
+      <section class="section">
+        <h2 class="section-heading">Leadership &amp; Organizational Experience</h2>
+        
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">Google Developer Groups (GDG) On Campus ITENAS</span>
+            <span class="entry-date">2025 – Present</span>
+          </div>
+          <div class="entry-subtitle">Active Member</div>
+          <ul class="entry-list">
+            <li>Collaborated in technology exploration workshops, Google ecosystem enablement sessions, and student digital innovation initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">ITENAS BIG FAIR Committee</span>
+            <span class="entry-date">2025 – 2026</span>
+          </div>
+          <div class="entry-subtitle">Human Capital &amp; Content Creator</div>
+          <ul class="entry-list">
+            <li>Honored with <em>Human Capital Excellence</em> for coordinating multi-divisional volunteer teams and managing event operations.</li>
+            <li>Led public speaking presentations and developed multimedia content reaching a regional university audience.</li>
+          </ul>
+        </div>
+
+        <div class="entry-item">
+          <div class="entry-header">
+            <span class="entry-title">CAYE ASEAN Delegation (Singapore &amp; Malaysia)</span>
+            <span class="entry-date">2026</span>
+          </div>
+          <div class="entry-subtitle">International Delegate</div>
+          <ul class="entry-list">
+            <li>Participated in regional youth enterprise forums in Singapore and Malaysia, broadening international industrial and business perspectives.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Key Certifications EN -->
+      <section class="section">
+        <h2 class="section-heading">Key Verified Certifications</h2>
+        <table class="certs-table">
+          <thead>
+            <tr>
+              <th style="width: 50%;">Certification Title</th>
+              <th style="width: 32%;">Issuing Authority</th>
+              <th style="width: 18%; text-align: right;">Credential</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Data Analytics Course</strong> <span class="badge-tag">VERIFIED</span></td>
+              <td>Google Skillshop</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1hQkM6yd78QQE0KeuipHmFMIUmXJR2X3k/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>AI for Everyone Course</strong> <span class="badge-tag">VERIFIED</span></td>
+              <td>AI Competency Certification</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1s2Tji65xz3at8DX0PGcjhQk3aYx36Mc8/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>Programming with Python</strong> <span class="badge-tag">VERIFIED</span></td>
+              <td>Dicoding Academy</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1ii_CBkfaI_j6_Nj5TuOEjvV1DkopGvrE/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>BIG FAIR CAYE ASEAN 2026 (Singapore &amp; Malaysia)</strong> <span class="badge-tag">INTERNATIONAL</span></td>
+              <td>CAYE ASEAN • BIG FAIR</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1sfZnvro_J5rs-0GWlVSwCT5T4LZNnzXe/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>Human Capital Excellence &amp; Public Speaking</strong> <span class="badge-tag">VERIFIED</span></td>
+              <td>BIG FAIR ITENAS</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1AwF6GE4XygJX2gHLUqdujcu7x0l6jWMY/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+            <tr>
+              <td><strong>GDG On Campus Active Membership</strong> <span class="badge-tag">MEMBER</span></td>
+              <td>Google Developer Groups On Campus</td>
+              <td style="text-align: right;"><a class="cert-link-btn" href="https://drive.google.com/file/d/1VuibRHMvgbay4p79zuobTNQtntBlTZsj/view?usp=drive_link" target="_blank">View File ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div> <!-- end of viewEn -->
 
   </main>
 
@@ -621,23 +811,31 @@
     function switchMode(mode) {
       const btnCv = document.getElementById('btnCv');
       const btnResume = document.getElementById('btnResume');
-      const certSection = document.getElementById('certSection');
+      const btnResumeEn = document.getElementById('btnResumeEn');
+      const viewId = document.getElementById('viewId');
+      const viewEn = document.getElementById('viewEn');
       const docSummary = document.getElementById('docSummary');
-      const cayeOrgItem = document.getElementById('cayeOrgItem');
 
-      if (mode === 'resume') {
+      btnCv.classList.remove('active');
+      btnResume.classList.remove('active');
+      btnResumeEn.classList.remove('active');
+
+      if (mode === 'resume-en') {
+        btnResumeEn.classList.add('active');
+        viewId.style.display = 'none';
+        viewEn.style.display = 'block';
+        document.title = "Resume (English) - Fasha Aditya Febrianto";
+      } else if (mode === 'resume') {
         btnResume.classList.add('active');
-        btnCv.classList.remove('active');
+        viewEn.style.display = 'none';
+        viewId.style.display = 'block';
         document.title = "Resume - Fasha Aditya Febrianto";
-
-        // Compact summary for Resume
         docSummary.innerHTML = "Mahasiswa Teknik Industri ITENAS Bandung angkatan 2025 dengan fokus pada optimalisasi sistem manufaktur, analisis ergonomi (RULA/REBA), supply chain (EOQ/ROP), dan analisis data industri. Memiliki sertifikasi Google Data Analytics, Python, serta aktif di Google Developer Groups (GDG) On Campus dan forum internasional CAYE ASEAN.";
       } else {
         btnCv.classList.add('active');
-        btnResume.classList.remove('active');
+        viewEn.style.display = 'none';
+        viewId.style.display = 'block';
         document.title = "Curriculum Vitae - Fasha Aditya Febrianto";
-
-        // Comprehensive summary for CV
         docSummary.innerHTML = "Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus keilmuan pada <strong>Perancangan Sistem Manufaktur</strong>, <strong>Analisis Ergonomi & Postur Kerja</strong>, <strong>Supply Chain & Manajemen Persediaan</strong>, serta <strong>Analisis Data Industri</strong>. Berpengalaman aktif dalam organisasi teknologi dan kepanitiaan internasional seperti Google Developer Groups (GDG) On Campus dan BIG FAIR CAYE ASEAN. Memiliki sertifikasi terverifikasi di bidang Data Analytics (Google Skillshop), Pemrograman Python (Dicoding), dan Artificial Intelligence. Terampil memadukan pendekatan analisis kuantitatif dengan pemecahan masalah operasional industri.";
       }
     }
