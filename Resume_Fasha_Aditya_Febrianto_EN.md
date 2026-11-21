@@ -27,17 +27,20 @@ Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Ban
 ---
 
 ### SELECTED ENGINEERING PROJECTS
-**Manufacturing Facility & Plant Layout Optimization | ITENAS** (2025)
-- Designed an optimized production line layout utilizing Activity Relationship Charts (ARC) to minimize material handling distances and eliminate operational bottlenecks.
-- Enhanced workspace utilization and line balancing to improve overall throughput rate.
+**Additive Manufacturing & 3D Printing Prototyping | SSML ITENAS** (2025 – 2026)
+- Engineered individual mechanical CAD components for an industrial bench vise, optimized slicing process parameters, and fabricated physical prototypes via FDM 3D printing.
 
-**Ergonomic Posture Assessment & Workstation Redesign | Ergonomics Lab ITENAS** (2025)
-- Evaluated industrial operator postures using RULA and REBA methodologies to identify musculoskeletal disorder (MSD) risk factors.
-- Formulated ergonomic workstation interventions and mechanical tool adjustments to ensure operator safety and sustain long-term productivity.
+**3D Mechanical Assembly & ISO Standard Engineering Drawing | SSML ITENAS** (2025 – 2026)
+- Modeled 10+ part mechanical assembly on SolidWorks with kinematic mate constraints, drafting ISO-standard 2D fabrication blueprints, BOM, and GD&T specifications.
 
-**Supply Chain Inventory Simulation & Modeling | ITENAS** (2025)
-- Developed mathematical inventory control models utilizing Economic Order Quantity (EOQ) and Reorder Point (ROP) equations.
-- Analyzed tradeoffs between procurement and holding costs under demand volatility, delivering measurable warehousing cost reductions.
+**Descriptive Statistics & Manufacturing QC Variance Analysis | LKISI ITENAS** (2025 – 2026)
+- Formulated an automated Python (Pandas/NumPy) pipeline to evaluate central tendency, product weight variance, and distribution parameters (skewness, kurtosis, boxplots).
+
+**Sampling Distribution Simulation & Central Limit Theorem Validation | LKISI ITENAS** (2025 – 2026)
+- Programmed multi-sample empirical simulations ($N=2, 5, 10$) using Sturges Rule binning and Matplotlib histograms to validate Central Limit Theorem convergence.
+
+**Automated Retail POS & Customer Loyalty Transaction System | LKISI ITENAS** (2025 – 2026)
+- Designed system flowcharts in MS Visio and implemented a Python CLI checkout engine featuring conditional branching, membership cashback discounts, and token generation.
 
 ---
 

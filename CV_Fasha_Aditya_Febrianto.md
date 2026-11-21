@@ -27,18 +27,36 @@ Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 
 
 ---
 
-### PROYEK TEKNIK INDUSTRI (INDUSTRIAL ENGINEERING PROJECTS)
-**1. Optimalisasi & Tata Letak Sistem Manufaktur (Manufacturing Layout Optimization)**
-- Merancang usulan alur produksi terintegrasi dan tata letak fasilitas lini kerja untuk meminimalkan perpindahan material (*material handling*) serta mengurangi *bottleneck*.
-- Menerapkan prinsip analisis *Activity Relationship Chart* (ARC) dan efisiensi ruang kerja untuk meningkatkan *throughput*.
+### PROYEK TEKNIK INDUSTRI & ANALITIK (ENGINEERING & ANALYTICS PROJECTS)
+**1. Additive Manufacturing & 3D Printing Prototyping Komponen Ragum**
+*Small Scale Manufacturing Laboratory (SSML) ITENAS* | *Additive Manufacturing, 3D Printing (STL), FDM Prototyping, Draw.io*
+- Merancang komponen mekanikal individual ragum kerja bangku (*bench vise*) menggunakan CAD dan mengekspor geometri ke format STL untuk manufaktur aditif.
+- Menentukan parameter proses pencetakan 3D (*layer height*, *infill density*, dan *nozzle temperature*) serta memetakan alur kerja sistematis melalui diagram alir proses produksi.
+- Menganalisis akurasi dimensi dan integritas struktural komponen hasil cetak filamen skala laboratorium.
 
-**2. Analisis Ergonomi & Evaluasi Postur Kerja (Ergonomics & Work Study)**
-- Melakukan investigasi biomekanika postur kerja operator menggunakan metode RULA (*Rapid Upper Limb Assessment*) dan REBA (*Rapid Entire Body Assessment*).
-- Mengidentifikasi potensi bahaya cedera *Musculoskeletal Disorders* (MSDs) serta merekomendasikan perbaikan stasiun kerja yang ergonomis dan aman.
+**2. 3D Mechanical Assembly & ISO Standard Engineering Drawing Ragum SSML**
+*Small Scale Manufacturing Laboratory (SSML) ITENAS* | *SolidWorks Assembly, Kinematic Mating, GD&T, Technical Drawing 2D*
+- Memodelkan 10+ part dan perakitan mekanikal (*assembly*) utuh mekanisme ragum pada SolidWorks dengan batasan suaian (*coincident, concentric, distance mates*) dan simulasi kinematika gerakan.
+- Menyusun dokumentasi gambar kerja manufaktur 2D standar ISO lengkap dengan proyeksi ortogonal, penampang potong (*section views*), etiket etis, dan *Bill of Materials* (BOM).
+- Menetapkan spesifikasi toleransi geometris (*Geometric Dimensioning & Tolerancing* / GD&T) dan suaian presisi (*clearance/interference fits*) antar komponen geser dan ulir.
 
-**3. Simulasi & Pengendalian Persediaan Material (Supply Chain & Inventory Control)**
-- Mengembangkan model perhitungan persediaan matematis berbasis *Economic Order Quantity* (EOQ) dan *Reorder Point* (ROP).
-- Menganalisis trade-off antara biaya pemesanan (*ordering cost*) dan biaya penyimpanan (*holding cost*) guna menekan biaya operasional pergudangan.
+**3. Statistika Deskriptif & Pengendalian Variasi Mutu Bobot Produk Manufaktur**
+*Laboratorium Komputasi Industri dan Sistem Informasi (LKISI) ITENAS* | *Python, Pandas, NumPy, Statistika Deskriptif*
+- Membangun skrip otomasi pengolahan data menggunakan Python (Pandas/NumPy) untuk mengevaluasi data variasi bobot produk manufaktur dari dataset industri.
+- Mengalkulasi metrik tendensi sentral (Mean, Median, Modus) dan ukuran dispersi data (Variansi, Standar Deviasi, Kuantil, Interquartile Range).
+- Menganalisis parameter bentuk kurva (Skewness & Kurtosis) serta memvisualisasikan dispersi data melalui diagram *Boxplot* untuk mendeteksi outlier dan deviasi mutu.
+
+**4. Simulasi Distribusi Sampling & Pengujian Empiris Central Limit Theorem**
+*Laboratorium Komputasi Industri dan Sistem Informasi (LKISI) ITENAS* | *Python, Matplotlib, Central Limit Theorem, Sampling Simulation*
+- Mengembangkan model simulasi distribusi sampling rata-rata berbasis Python untuk menguji perilaku populasi operasional pada berbagai ukuran sampel bertingkat ($N=2, 5, 10$).
+- Mengimplementasikan Aturan Sturges ($k = 1 + 3.3 \log_{10} n$) untuk menentukan jumlah kelas interval frekuensi secara matematis.
+- Membuktikan secara empiris konvergensi bentuk distribusi menuju kurva normal standar seiring bertambahnya ukuran sampel (*Central Limit Theorem*).
+
+**5. Pengembangan Sistem Otomasi POS & Transaksi Loyalitas Pelanggan**
+*Laboratorium Komputasi Industri dan Sistem Informasi (LKISI) ITENAS* | *Python Programming, Microsoft Visio, Logic Flow*
+- Memodelkan alur proses transaksi ritel POS (*Point of Sale*) multi-skenario dan program loyalitas pelanggan ke dalam diagram alir (*flowchart*) terstruktur menggunakan Microsoft Visio.
+- Mengimplementasikan program kalkulasi transaksi kasir berbasis Python dengan algoritma percabangan bersyarat (*conditional branching*), validasi input, dan *auto-generated transaction ID*.
+- Mengotomasi perhitungan diskon keanggotaan (*cashback* 8%), penambahan biaya pendaftaran member, dan pencetakan ringkasan struk pembayaran.
 
 ---
 

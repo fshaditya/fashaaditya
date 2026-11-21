@@ -1,0 +1,76 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="Xu7ZHKKFUmYaxa4b-CrD">
+    <mxGraphModel dx="1288" dy="843" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-15" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-1" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="start" vertex="1">
+          <mxGeometry height="80" width="120" x="100" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-16" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-2" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="mempersiapkan print out komponen ragum beserta benda kerja ragum" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-17" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-3" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="menyerahkan persyaratan kepada asisten laboratorium" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-18" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-4" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="masuk kedalam SSML" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-19" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-5" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="briefing dari asisten laboratorium" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-20" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-6" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="materi SK 1,2,3,4" vertex="1">
+          <mxGeometry height="60" width="120" x="100" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-22" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-8" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="semua materi selesai" vertex="1">
+          <mxGeometry height="80" width="80" x="350" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-23" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-9" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="tes akhir" vertex="1">
+          <mxGeometry height="60" width="120" x="330" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-24" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-10" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="keluar SSML" vertex="1">
+          <mxGeometry height="60" width="120" x="330" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;" value="end" vertex="1">
+          <mxGeometry height="80" width="120" x="330" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-21" edge="1" parent="1" source="fQIaI8i6NzUXa1_9R6kT-12" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fQIaI8i6NzUXa1_9R6kT-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="a" vertex="1">
+          <mxGeometry height="60" width="60" x="360" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fQIaI8i6NzUXa1_9R6kT-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="a" vertex="1">
+          <mxGeometry height="60" width="60" x="130" y="830" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

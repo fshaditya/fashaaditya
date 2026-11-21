@@ -25,14 +25,20 @@ Mahasiswa Teknik Industri ITENAS Bandung angkatan 2025 dengan minat kuat dalam o
 ---
 
 ### SELECTED PROJECTS
-**Sistem Manufaktur & Layout Pabrik | ITENAS**
-- Merancang usulan tata letak lini produksi dengan mengurangi jarak tempuh material handling dan mengeliminasi bottleneck stasiun kerja.
+**Additive Manufacturing & 3D Printing Prototyping | Lab SSML ITENAS**
+- Merancang komponen mekanikal ragum, mengoptimasi parameter *slicing* & konversi STL, serta memproduksi prototipe fisik melalui manufaktur aditif 3D Printing FDM.
 
-**Evaluasi Ergonomi & Postur Kerja Operator | Lab Ergonomi ITENAS**
-- Menganalisis postur operator industri memakai indikator RULA/REBA untuk mereduksi faktor risiko keluhan Musculoskeletal Disorders (MSDs).
+**3D Mechanical Assembly & ISO Technical Drawing | Lab SSML ITENAS**
+- Memodelkan 10+ part dan perakitan mekanikal ragum presisi pada SolidWorks dengan batasan suaian (*mating*), serta menyusun lembar gambar teknik 2D berstandar GD&T.
 
-**Pemodelan Simulasi Pengendalian Persediaan | ITENAS**
-- Mengkalkulasikan titik pemesanan kembali (ROP) dan kuantitas order optimal (EOQ) guna mengefisienkan total holding cost inventori.
+**Descriptive Statistics & Manufacturing QC Variance | Lab LKISI ITENAS**
+- Mengembangkan skrip Python (Pandas/NumPy) untuk evaluasi tendensi sentral, variansi bobot produk, kuantil, dan deteksi anomali mutu lini produksi melalui Boxplot.
+
+**Sampling Distribution & Central Limit Theorem Simulation | Lab LKISI ITENAS**
+- Memodelkan simulasi sampling bertingkat ($N=2, 5, 10$) dengan aturan Sturges dan visualisasi histogram Matplotlib untuk memvalidasi konvergensi Teorema Limit Pusat.
+
+**Automated Retail POS & Transaction Processing System | Lab LKISI ITENAS**
+- Memodelkan alur proses dengan MS Visio dan membangun program kasir otomatis berbasis Python dengan algoritma percabangan, diskon keanggotaan, dan token unik pesanan.
 
 ---
 
