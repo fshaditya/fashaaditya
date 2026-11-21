@@ -333,11 +333,18 @@
       margin-left: 4px;
     }
 
-    /* PRINT SPECIFIC STYLES FOR CLEAN PDF GENERATION */
+    /* PRINT SPECIFIC STYLES FOR CLEAN ATS PDF GENERATION */
+    @page {
+      size: A4;
+      margin: 12mm 15mm;
+    }
+
     @media print {
       body {
         background: #ffffff !important;
         padding: 0 !important;
+        color: #0f172a !important;
+        font-family: Arial, Helvetica, sans-serif !important;
       }
 
       .no-print {
@@ -351,19 +358,83 @@
         border-radius: 0 !important;
       }
 
+      .header {
+        border-bottom: 2px solid #0f172a !important;
+        padding-bottom: 12px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .name-title h1 {
+        font-size: 18pt !important;
+        color: #0f172a !important;
+      }
+
+      .name-title .subtitle {
+        color: #334155 !important;
+        font-size: 10pt !important;
+      }
+
+      .contact-info {
+        font-size: 8.5pt !important;
+        color: #334155 !important;
+      }
+
       a {
         text-decoration: none !important;
         color: inherit !important;
       }
 
       .section {
-        page-break-inside: avoid;
-        margin-bottom: 18px !important;
+        page-break-inside: auto;
+        margin-bottom: 14px !important;
+      }
+
+      .section-heading {
+        color: #0f172a !important;
+        border-bottom: 1px solid #94a3b8 !important;
+        font-size: 11pt !important;
+        page-break-after: avoid;
+        margin-bottom: 8px !important;
+      }
+
+      .skills-grid {
+        display: block !important;
       }
 
       .skill-category {
-        border-color: #cbd5e1 !important;
-        background: #fafafa !important;
+        border: none !important;
+        background: transparent !important;
+        padding: 3px 0 !important;
+        margin-bottom: 4px !important;
+      }
+
+      .skill-cat-title {
+        display: inline !important;
+        font-weight: bold !important;
+        color: #0f172a !important;
+      }
+
+      .skill-cat-title::after {
+        content: ": " !important;
+      }
+
+      .skill-cat-content {
+        display: inline !important;
+        color: #334155 !important;
+      }
+
+      .entry-item {
+        page-break-inside: avoid;
+        margin-bottom: 10px !important;
+      }
+
+      .certs-table {
+        font-size: 8.5pt !important;
+      }
+
+      .certs-table th, .certs-table td {
+        padding: 4px 6px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
       }
     }
 
@@ -391,21 +462,34 @@
 
   <!-- Top Controls & Actions (Not Printed) -->
   <div class="top-controls no-print">
-    <a href="index.html" class="btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      Kembali ke Portofolio
-    </a>
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <a href="index.html" class="btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Kembali ke Portofolio
+      </a>
 
-    <div class="doc-toggle">
-      <button id="btnCv" class="active" onclick="switchMode('cv')">CV (Lengkap)</button>
-      <button id="btnResume" onclick="switchMode('resume')">Resume (ID)</button>
-      <button id="btnResumeEn" onclick="switchMode('resume-en')">Resume (English)</button>
+      <div class="doc-toggle">
+        <button id="btnCv" class="active" onclick="switchMode('cv')">CV (Lengkap)</button>
+        <button id="btnResume" onclick="switchMode('resume')">Resume (ID)</button>
+        <button id="btnResumeEn" onclick="switchMode('resume-en')">Resume (English)</button>
+      </div>
+
+      <span class="badge-tag" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; font-size:0.75rem; padding:4px 8px; border-radius:6px;" title="Format halaman ini dioptimalkan untuk sistem ATS (Applicant Tracking System)">
+        ✓ ATS-Friendly Layout
+      </span>
     </div>
 
-    <button onclick="window.print()" class="btn btn-primary">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-      Cetak / Simpan PDF
-    </button>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <a id="btnDownloadDocx" href="downloads/CV_Fasha_Aditya_Febrianto_ATS.docx" download="CV_Fasha_Aditya_Febrianto_ATS.docx" class="btn btn-secondary" style="background:#0284c7; color:#ffffff; border-color:#0284c7;" title="Unduh file Microsoft Word (.docx) dengan format standar ATS">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span id="txtDownloadDocx">Unduh ATS Word (.docx)</span>
+      </a>
+
+      <button onclick="window.print()" class="btn btn-primary" title="Cetak atau simpan langsung sebagai PDF berstandar ATS">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Cetak / Simpan PDF
+      </button>
+    </div>
   </div>
 
   <!-- A4 Printable Paper -->
@@ -859,6 +943,8 @@
       const viewId = document.getElementById('viewId');
       const viewEn = document.getElementById('viewEn');
       const docSummary = document.getElementById('docSummary');
+      const btnDownloadDocx = document.getElementById('btnDownloadDocx');
+      const txtDownloadDocx = document.getElementById('txtDownloadDocx');
 
       btnCv.classList.remove('active');
       btnResume.classList.remove('active');
@@ -869,18 +955,39 @@
         viewId.style.display = 'none';
         viewEn.style.display = 'block';
         document.title = "Resume (English) - Fasha Aditya Febrianto";
+        if (btnDownloadDocx) {
+          btnDownloadDocx.href = 'downloads/Resume_Fasha_Aditya_Febrianto_EN_ATS.docx';
+          btnDownloadDocx.setAttribute('download', 'Resume_Fasha_Aditya_Febrianto_EN_ATS.docx');
+        }
+        if (txtDownloadDocx) {
+          txtDownloadDocx.textContent = 'Unduh ATS Resume EN (.docx)';
+        }
       } else if (mode === 'resume') {
         btnResume.classList.add('active');
         viewEn.style.display = 'none';
         viewId.style.display = 'block';
         document.title = "Resume - Fasha Aditya Febrianto";
         docSummary.innerHTML = "Mahasiswa Teknik Industri ITENAS Bandung angkatan 2025 dengan fokus pada optimalisasi sistem manufaktur, analisis ergonomi (RULA/REBA), supply chain (EOQ/ROP), dan analisis data industri. Memiliki sertifikasi Google Data Analytics, Python, serta aktif di Google Developer Groups (GDG) On Campus dan forum internasional CAYE ASEAN.";
+        if (btnDownloadDocx) {
+          btnDownloadDocx.href = 'downloads/Resume_Fasha_Aditya_Febrianto_ATS.docx';
+          btnDownloadDocx.setAttribute('download', 'Resume_Fasha_Aditya_Febrianto_ATS.docx');
+        }
+        if (txtDownloadDocx) {
+          txtDownloadDocx.textContent = 'Unduh ATS Resume ID (.docx)';
+        }
       } else {
         btnCv.classList.add('active');
         viewEn.style.display = 'none';
         viewId.style.display = 'block';
         document.title = "Curriculum Vitae - Fasha Aditya Febrianto";
         docSummary.innerHTML = "Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus keilmuan pada <strong>Perancangan Sistem Manufaktur</strong>, <strong>Analisis Ergonomi & Postur Kerja</strong>, <strong>Supply Chain & Manajemen Persediaan</strong>, serta <strong>Analisis Data Industri</strong>. Berpengalaman aktif dalam organisasi teknologi dan kepanitiaan internasional seperti Google Developer Groups (GDG) On Campus dan BIG FAIR CAYE ASEAN. Memiliki sertifikasi terverifikasi di bidang Data Analytics (Google Skillshop), Pemrograman Python (Dicoding), dan Artificial Intelligence. Terampil memadukan pendekatan analisis kuantitatif dengan pemecahan masalah operasional industri.";
+        if (btnDownloadDocx) {
+          btnDownloadDocx.href = 'downloads/CV_Fasha_Aditya_Febrianto_ATS.docx';
+          btnDownloadDocx.setAttribute('download', 'CV_Fasha_Aditya_Febrianto_ATS.docx');
+        }
+        if (txtDownloadDocx) {
+          txtDownloadDocx.textContent = 'Unduh ATS CV (.docx)';
+        }
       }
     }
   </script>
