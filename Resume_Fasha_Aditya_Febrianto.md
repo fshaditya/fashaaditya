@@ -1,60 +1,77 @@
 # RESUME
 
 **FASHA ADITYA FEBRIANTO**  
-Bandung, Indonesia • [fshaditya@gmail.com](mailto:fshaditya@gmail.com) • [github.com/fshaditya](https://github.com/fshaditya/fashaaditya) • [Portfolio Website](https://fshaditya.github.io/fashaaditya/)
+Bandung, Indonesia • (+62) 812-3456-7890 • [fshaditya@gmail.com](mailto:fshaditya@gmail.com) • [linkedin.com/in/fashaaditya](https://linkedin.com/in/fashaaditya) • [github.com/fshaditya](https://github.com/fshaditya/fashaaditya) • [Portfolio Website](https://fshaditya.github.io/fashaaditya/)
 
 ---
 
-### PROFESSIONAL SUMMARY
-Mahasiswa Teknik Industri ITENAS Bandung angkatan 2025 dengan minat kuat dalam optimalisasi sistem manufaktur, analisis ergonomi, supply chain, dan analisis data industri. Memiliki sertifikasi Google Data Analytics, Python, dan AI serta aktif berkontribusi dalam Google Developer Groups (GDG) On Campus dan ajang internasional CAYE ASEAN.
+### RINGKASAN PROFESIONAL
+Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus spesialisasi pada **Perancangan Sistem Manufaktur**, **Pengendalian Mutu Statistika (SQC)**, **Supply Chain & Manajemen Persediaan**, serta **Analisis Data Industri**. Tersertifikasi resmi Google Data Analytics dan Pemrograman Python. Berpengalaman praktis dalam pemodelan 3D CAD SolidWorks, manufaktur aditif 3D printing FDM, dan pengolahan data statistik industri berbasis Python (Pandas/NumPy). Memiliki rekam jejak aktif dalam Google Developer Groups (GDG) On Campus dan delegasi program kewirausahaan regional pemuda ASEAN.
 
 ---
 
-### EDUCATION
+### PENDIDIKAN
 **Institut Teknologi Nasional (ITENAS), Bandung**  
-*S1 Teknik Industri* | 2025 – Sekarang  
-- Relevansi Studi: Perancangan Tata Letak Fasilitas, Analisis Ergonomi (RULA/REBA), Riset Operasi, Pengendalian Persediaan (EOQ).
+*Sarjana Teknik (S1) - Teknik Industri* | September 2025 – Juni 2029 (Perkiraan Lulus)
+- **Fokus Keilmuan**: Perancangan Tata Letak Pabrik, Analisis Pengendalian Mutu (SQC), Ergonomi & Pengukuran Kerja (RULA/REBA), Riset Operasional, Manajemen Persediaan (EOQ/ROP), K3 Industri.
+- **Aktivitas Kampus**: Anggota Aktif Google Developer Groups (GDG) On Campus ITENAS, Panitia Divisi Human Capital & Media BIG FAIR ITENAS.
 
 ---
 
-### TECHNICAL & PROFESSIONAL SKILLS
-- **Metode Teknik Industri**: Plant Layout Design, RULA / REBA Ergonomic Assessment, Work Study, EOQ & ROP Inventory Modeling, K3 & QC Fundamentals.
-- **Tools & Data Skills**: Google Data Analytics, Python Programming (Dicoding Certified), Spreadsheet & Data Modeling, Artificial Intelligence Awareness.
-- **Interpersonal & Management**: Public Speaking, Cross-functional Team Collaboration, Human Capital Coordination, Event Execution.
+### KEAHLIAN TEKNIS
+- **Kompetensi Teknik Industri**: Perancangan Tata Letak Pabrik (Plant Layout & ARC), Analisis Ergonomi (RULA & REBA), Pengendalian Persediaan (EOQ, ROP, Safety Stock), Toleransi Geometris & Suaian (GD&T), Bill of Materials (BOM).
+- **Analisis Data & Pemrograman**: Google Data Analytics, Pemrograman Python (Pandas, NumPy, Matplotlib), Pemodelan Spreadsheet / Excel, Pengujian Hipotesis & Teorema Limit Pusat.
+- **Software Desain & Simulasi**: SolidWorks CAD (3D Modeling & Kinematic Assembly), Slicing 3D Printing (STL), Microsoft Visio (Pemodelan Flowchart Sistem), Draw.io.
+- **Bahasa & Soft Skills**: Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Tingkat Profesional); Public Speaking, Komunikasi Tim Multidisiplin.
 
 ---
 
-### SELECTED PROJECTS
-**Additive Manufacturing & 3D Printing Prototyping | Lab SSML ITENAS**
-- Merancang komponen mekanikal ragum, mengoptimasi parameter *slicing* & konversi STL, serta memproduksi prototipe fisik melalui manufaktur aditif 3D Printing FDM.
+### PENGALAMAN KERJA & PROYEK
+**1. Additive Manufacturing & 3D Printing Prototyping Komponen Ragum** | *Laboratorium SSML ITENAS*  
+*September 2025 – Oktober 2025*
+- Merancang model 3D CAD komponen mekanikal ragum kerja bangku (*bench vise*), mengonversi geometri ke format STL, dan mengoptimasi parameter proses cetak FDM (*infill* 20%, *layer height* 0.2 mm).
+- Menyusun diagram alir proses manufaktur aditif menggunakan Draw.io dan mengevaluasi deviasi dimensi hasil cetak filamen skala laboratorium.
 
-**3D Mechanical Assembly & ISO Technical Drawing | Lab SSML ITENAS**
-- Memodelkan 10+ part dan perakitan mekanikal ragum presisi pada SolidWorks dengan batasan suaian (*mating*), serta menyusun lembar gambar teknik 2D berstandar GD&T.
+**2. 3D Mechanical Assembly & ISO Standard Engineering Drawing Ragum SSML** | *Laboratorium SSML ITENAS*  
+*Oktober 2025 – November 2025*
+- Membangun rakitan mekanis 3D (*assembly*) utuh berisi 10+ komponen pada SolidWorks dengan batasan suaian (*concentric, coincident mates*) dan simulasi kinematika gerakan ulir gerak.
+- Menyusun dokumentasi lembar gambar kerja 2D berstandar ISO lengkap dengan proyeksi ortogonal, potongan penampang, etiket etis, Bill of Materials (BOM), dan toleransi geometris (GD&T).
 
-**Descriptive Statistics & Manufacturing QC Variance | Lab LKISI ITENAS**
-- Mengembangkan skrip Python (Pandas/NumPy) untuk evaluasi tendensi sentral, variansi bobot produk, kuantil, dan deteksi anomali mutu lini produksi melalui Boxplot.
+**3. Statistika Deskriptif & Pengendalian Variasi Mutu Bobot Produk Manufaktur** | *Laboratorium LKISI ITENAS*  
+*November 2025 – Desember 2025*
+- Mengembangkan skrip otomasi pengolahan data menggunakan Python (Pandas & NumPy) untuk menganalisis 100+ sampel variasi bobot produk manufaktur dari lini produksi.
+- Mengalkulasi metrik tendensi sentral (Mean, Median, Modus), dispersi data (Variansi, Standar Deviasi, Kuantil), serta memvisualisasikan skewness, kurtosis, dan outlier melalui Boxplot Matplotlib.
 
-**Sampling Distribution & Central Limit Theorem Simulation | Lab LKISI ITENAS**
-- Memodelkan simulasi sampling bertingkat ($N=2, 5, 10$) dengan aturan Sturges dan visualisasi histogram Matplotlib untuk memvalidasi konvergensi Teorema Limit Pusat.
+**4. Simulasi Distribusi Sampling & Validasi Empiris Central Limit Theorem** | *Laboratorium LKISI ITENAS*  
+*Desember 2025 – Januari 2026*
+- Memodelkan simulasi komputasional distribusi sampling rata-rata berbasis Python pada berbagai skenario ukuran sampel ($N=2, N=5, N=10$) dari populasi data operasional.
+- Menerapkan Aturan Sturges untuk penentuan jumlah kelas frekuensi dan membuktikan secara empiris konvergensi bentuk kurva menuju distribusi normal standar (*Central Limit Theorem*).
 
-**Automated Retail POS & Transaction Processing System | Lab LKISI ITENAS**
-- Memodelkan alur proses dengan MS Visio dan membangun program kasir otomatis berbasis Python dengan algoritma percabangan, diskon keanggotaan, dan token unik pesanan.
+**5. Pengembangan Sistem Otomasi POS & Transaksi Loyalitas Pelanggan** | *Laboratorium LKISI ITENAS*  
+*Januari 2026 – Februari 2026*
+- Memodelkan sistem transaksi kasir retail multi-kondisi ke dalam diagram alir (*flowchart*) terstruktur menggunakan Microsoft Visio.
+- Membangun program CLI transaksi berbasis Python dengan algoritma percabangan bersyarat, validasi format input pengguna, kalkulasi diskon loyalitas (*cashback* 8%), dan pembuatan ID transaksi unik.
 
 ---
 
-### KEY CERTIFICATIONS (VERIFIED)
-- **Google Data Analytics Course** – Google Skillshop (2025)
-- **AI for Everyone** – AI Competency Certification (2025)
-- **Memulai Pemrograman dengan Python** – Dicoding Academy (2025)
-- **BIG FAIR CAYE ASEAN 2026 Singapore & Malaysia** – International Credential (2026)
-- **Human Capital Excellence & Public Speaking** – BIG FAIR ITENAS (2025)
-- **Introduction to Financial Literacy** – Dicoding Academy (2025)
+### SERTIFIKASI & PELATIHAN
+- **Google Data Analytics Course** – Google Skillshop (Juli 2025)
+- **AI for Everyone** – AI Competency Certification (Agustus 2025)
+- **Memulai Pemrograman dengan Python** – Dicoding Academy (September 2025)
+- **Introduction to Financial Literacy** – Dicoding Academy (Oktober 2025)
+- **Human Capital Excellence & Public Speaking** – BIG FAIR ITENAS (November 2025)
+- **Active Membership Credential** – Google Developer Groups (GDG) On Campus (Oktober 2025)
+- **BIG FAIR CAYE ASEAN 2026 (Singapore & Malaysia)** – CAYE ASEAN & BIG FAIR (Februari 2026)
+- **POLBAN Entrepreneur Day 2025** – Politeknik Negeri Bandung (Mei 2025)
 
 ---
 
-### ORGANIZATIONAL EXPERIENCE
-**Google Developer Groups (GDG) On Campus ITENAS** — *Active Member* (2025 – Sekarang)  
-- Berkolaborasi dalam eksplorasi teknologi Google dan pengembangan kapabilitas digital mahasiswa.
+### PENGALAMAN ORGANISASI & KEPEMIMPINAN
+**Google Developer Groups (GDG) On Campus ITENAS** | *Anggota Aktif (Active Member)* (Oktober 2025 – Sekarang)  
+- Terlibat aktif dalam lokakarya teknologi komputasi awan, eksplorasi ekosistem pengembang Google, dan kolaborasi proyek inovasi digital bersama rekan mahasiswa lintas jurusan.
 
-**Kepanitiaan BIG FAIR ITENAS** — *Human Capital & Content Creator* (2025 – 2026)  
-- Mengoordinasikan relawan dan menyusun konten komunikasi publik untuk kegiatan tingkat kampus dan regional.
+**Kepanitiaan Program BIG FAIR ITENAS** | *Divisi Human Capital, Public Speaking & Content Creator* (Agustus 2025 – Januari 2026)  
+- Dianugerahi sertifikat *Human Capital Excellence* atas kontribusi mengoordinasikan puluhan relawan dan menyusun konten komunikasi publik yang menjangkau ribuan audiens.
+
+**Delegasi BIG FAIR CAYE ASEAN 2026 (Singapore & Malaysia)** | *Delegasi Pemuda Internasional* (Februari 2026)  
+- Mewakili kontingen mahasiswa dalam forum pertukaran wawasan kewirausahaan dan industri pemuda ASEAN di Singapura dan Malaysia guna memperluas jejaring profesional internasional.

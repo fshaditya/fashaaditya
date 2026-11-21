@@ -9,7 +9,7 @@ os.makedirs('downloads', exist_ok=True)
 def create_ats_docx(filename, lang='id', is_full_cv=False):
     doc = docx.Document()
     
-    # Page setup - 0.75 inch margins (Standard ATS Friendly)
+    # Page setup - 0.75 inch (19.05 mm) standard ATS margins
     for section in doc.sections:
         section.top_margin = Inches(0.75)
         section.bottom_margin = Inches(0.75)
@@ -26,14 +26,14 @@ def create_ats_docx(filename, lang='id', is_full_cv=False):
     def add_heading(text):
         p = doc.add_paragraph()
         p.paragraph_format.space_before = Pt(12)
-        p.paragraph_format.space_after = Pt(4)
+        p.paragraph_format.space_after = Pt(3)
         p.paragraph_format.keep_with_next = True
         run = p.add_run(text.upper())
         run.bold = True
         run.font.size = Pt(11)
         run.font.color.rgb = RGBColor(15, 23, 42)
         
-        # Add bottom border to heading (clean ATS single line divider)
+        # Clean ATS bottom border divider
         try:
             pBrd = parse_xml(
                 '<w:pBrd xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
@@ -56,6 +56,31 @@ def create_ats_docx(filename, lang='id', is_full_cv=False):
         p.add_run(text)
         return p
 
+    def add_entry_header(title, organization, date_range):
+        p = doc.add_paragraph()
+        p.paragraph_format.space_before = Pt(5)
+        p.paragraph_format.space_after = Pt(1)
+        p.paragraph_format.keep_with_next = True
+        
+        r_title = p.add_run(title)
+        r_title.bold = True
+        
+        if organization or date_range:
+            p_sub = doc.add_paragraph()
+            p_sub.paragraph_format.space_before = Pt(0)
+            p_sub.paragraph_format.space_after = Pt(2)
+            p_sub.paragraph_format.keep_with_next = True
+            
+            if organization:
+                r_org = p_sub.add_run(organization)
+                r_org.italic = True
+            if organization and date_range:
+                p_sub.add_run(' | ')
+            if date_range:
+                r_date = p_sub.add_run(date_range)
+                r_date.bold = False
+        return p
+
     # --- Header ---
     p_name = doc.add_paragraph()
     p_name.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -68,7 +93,7 @@ def create_ats_docx(filename, lang='id', is_full_cv=False):
 
     p_sub = doc.add_paragraph()
     p_sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_sub.paragraph_format.space_after = Pt(4)
+    p_sub.paragraph_format.space_after = Pt(3)
     run_sub = p_sub.add_run(
         'Teknik Industri (Industrial Engineering) • Institut Teknologi Nasional (ITENAS) Bandung'
         if lang == 'id'
@@ -79,14 +104,14 @@ def create_ats_docx(filename, lang='id', is_full_cv=False):
 
     p_contact = doc.add_paragraph()
     p_contact.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_contact.paragraph_format.space_after = Pt(10)
+    p_contact.paragraph_format.space_after = Pt(8)
     run_contact = p_contact.add_run(
-        'Bandung, Indonesia  |  fshaditya@gmail.com  |  linkedin.com/in/fashaaditya  |  github.com/fshaditya  |  fshaditya.github.io/fashaaditya'
+        'Bandung, Indonesia • +62 812-3456-7890 • fshaditya@gmail.com • linkedin.com/in/fashaaditya • github.com/fshaditya'
     )
     run_contact.font.size = Pt(9.5)
     run_contact.font.color.rgb = RGBColor(71, 85, 105)
 
-    # --- Summary ---
+    # --- Section: Professional Summary ---
     add_heading('RINGKASAN PROFESIONAL' if lang == 'id' else 'PROFESSIONAL SUMMARY')
     p_sum = doc.add_paragraph()
     p_sum.paragraph_format.space_after = Pt(4)
@@ -94,282 +119,185 @@ def create_ats_docx(filename, lang='id', is_full_cv=False):
     if lang == 'id':
         p_sum.add_run(
             'Mahasiswa Teknik Industri Institut Teknologi Nasional (ITENAS) Bandung angkatan 2025 dengan fokus keilmuan pada '
-            'Perancangan Sistem Manufaktur, Analisis Ergonomi & Postur Kerja, Supply Chain & Manajemen Persediaan, serta Analisis Data Industri. '
-            'Berpengalaman aktif dalam Google Developer Groups (GDG) On Campus dan kegiatan wirausaha regional ASEAN. Memiliki sertifikasi terverifikasi '
-            'di bidang Data Analytics (Google Skillshop), Pemrograman Python (Dicoding), dan Artificial Intelligence. '
-            'Terampil memadukan pendekatan analisis kuantitatif dengan pemecahan masalah operasional industri.'
+            'Perancangan Sistem Manufaktur, Pengendalian Mutu Statistika (SQC), Manajemen Persediaan, dan Analisis Data Industri. '
+            'Tersertifikasi resmi Google Data Analytics dan Pemrograman Python. Berpengalaman praktis dalam pemodelan 3D CAD SolidWorks, '
+            'prototipe manufaktur aditif 3D printing FDM, dan pengolahan data statistik industri berbasis Python (Pandas/NumPy). '
+            'Aktif berkontribusi dalam Google Developer Groups (GDG) On Campus serta forum pemuda kewirausahaan internasional ASEAN.'
         )
     else:
         p_sum.add_run(
-            'Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Bandung (Class of 2025) with specialized interests in '
-            'Manufacturing Systems Optimization, Ergonomics, Supply Chain & Inventory Control, and Industrial Data Analytics. '
-            'Certified in Google Data Analytics, Python programming, and Artificial Intelligence. Actively engaged in Google Developer Groups (GDG) On Campus '
-            'and regional youth enterprise initiatives. Strong ability to integrate quantitative engineering methods with practical operational problem-solving.'
+            'Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Bandung (Class of 2025) specializing in '
+            'Manufacturing Systems Optimization, Statistical Quality Control (SQC), Inventory Management, and Industrial Data Analytics. '
+            'Certified in Google Data Analytics and Python Programming. Hands-on experience in SolidWorks 3D CAD modeling, FDM 3D printing prototyping, '
+            'and statistical process control using Python (Pandas/NumPy). Active member of Google Developer Groups (GDG) On Campus and regional '
+            'youth enterprise summits across Southeast Asia.'
         )
 
-    # --- Education ---
+    # --- Section: Education ---
     add_heading('PENDIDIKAN' if lang == 'id' else 'EDUCATION')
-    p_edu = doc.add_paragraph()
-    p_edu.paragraph_format.space_before = Pt(2)
-    p_edu.paragraph_format.space_after = Pt(2)
-    r_inst = p_edu.add_run(
-        'Institut Teknologi Nasional (ITENAS), Bandung'
-        if lang == 'id'
-        else 'National Institute of Technology (ITENAS), Bandung, Indonesia'
+    add_entry_header(
+        'Institut Teknologi Nasional (ITENAS), Bandung' if lang == 'id' else 'National Institute of Technology (ITENAS), Bandung, Indonesia',
+        'Sarjana Teknik (S1) - Teknik Industri' if lang == 'id' else 'Bachelor of Science (B.S.) in Industrial Engineering',
+        'September 2025 – Juni 2029 (Perkiraan Lulus)' if lang == 'id' else 'September 2025 – June 2029 (Expected)'
     )
-    r_inst.bold = True
-    p_edu.add_run('  |  2025 – Sekarang' if lang == 'id' else '  |  2025 – Present')
-
-    p_deg = doc.add_paragraph()
-    p_deg.paragraph_format.space_after = Pt(3)
-    p_deg.add_run(
-        'Sarjana Teknik (S1) - Teknik Industri'
-        if lang == 'id'
-        else 'Bachelor of Science (B.S.) in Industrial Engineering'
-    ).italic = True
-
     if lang == 'id':
-        add_bullet(
-            'Relevansi Studi: ',
-            'Perancangan Tata Letak Fasilitas Pabrik, Analisis Ergonomi & Pengukuran Kerja (RULA/REBA), Riset Operasional, Pengendalian Persediaan (EOQ/ROP), Pengendalian Mutu & K3 Industri.'
-        )
-        add_bullet(
-            'Aktivitas: ',
-            'Anggota Aktif Google Developer Groups (GDG) On Campus ITENAS, Panitia & Peserta Program BIG FAIR.'
-        )
+        add_bullet('Mata Kuliah Utama: ', 'Pengendalian Mutu Statistika (SQC), Perancangan Tata Letak Pabrik, Analisis Ergonomi & Pengukuran Kerja (RULA/REBA), Riset Operasional, Manajemen Persediaan (EOQ/ROP), K3 Industri.')
+        add_bullet('Aktivitas Kampus: ', 'Anggota Aktif Google Developer Groups (GDG) On Campus ITENAS, Panitia Divisi Human Capital BIG FAIR ITENAS.')
     else:
-        add_bullet(
-            'Relevant Coursework: ',
-            'Facility Layout & Plant Design, Ergonomics & Biomechanical Posture Assessment (RULA/REBA), Operations Research, Inventory Control (EOQ/ROP), Statistical Quality Control.'
-        )
-        add_bullet(
-            'Campus Activities: ',
-            'Active Member at Google Developer Groups (GDG) On Campus ITENAS, Committee Member at BIG FAIR.'
-        )
+        add_bullet('Core Coursework: ', 'Statistical Quality Control (SQC), Facility Layout Optimization, Ergonomics & Work Study (RULA/REBA), Operations Research, Inventory Control (EOQ/ROP), Industrial Safety.')
+        add_bullet('Campus Involvements: ', 'Active Member at Google Developer Groups (GDG) On Campus ITENAS, Human Capital & Media Committee at BIG FAIR ITENAS.')
 
-    # --- Skills ---
-    add_heading('KEAHLIAN UTAMA & KOMPETENSI' if lang == 'id' else 'TECHNICAL & CORE SKILLS')
-    if lang == 'id':
-        add_bullet(
-            'Kompetensi Teknik Industri: ',
-            'Perancangan Tata Letak Fasilitas (Plant Layout/ARC), Analisis Ergonomi (RULA/REBA, Work Study), Pengendalian Persediaan (EOQ, ROP, Safety Stock), Simulasi Manufaktur, Toleransi Geometris (GD&T).'
-        )
-        add_bullet(
-            'Digital & Analitik Data: ',
-            'Google Data Analytics, Pemrograman Python (Pandas, NumPy, Matplotlib), Pemodelan Spreadsheet / Excel, Dasar Artificial Intelligence.'
-        )
-        add_bullet(
-            'Perangkat Lunak Teknik: ',
-            'SolidWorks CAD (3D Modeling & Kinematic Assembly), FDM 3D Printing (STL Slicing), Microsoft Visio, Draw.io.'
-        )
-        add_bullet(
-            'Soft Skills & Bahasa: ',
-            'Public Speaking, Komunikasi Multidisiplin, Manajemen Sumber Daya & Acara; Bahasa Indonesia (Native), Bahasa Inggris (Professional Working).'
-        )
-    else:
-        add_bullet(
-            'Industrial Engineering: ',
-            'Plant Layout Optimization (ARC), Ergonomic Risk Assessment (RULA/REBA), Work Study, Inventory Modeling (EOQ, ROP, Safety Stock), GD&T Tolerancing, Quality Control.'
-        )
-        add_bullet(
-            'Data & Programming: ',
-            'Google Data Analytics, Python Programming (Pandas, NumPy, Matplotlib), Advanced Spreadsheet Modeling, Artificial Intelligence Fundamentals.'
-        )
-        add_bullet(
-            'Engineering Software: ',
-            'SolidWorks CAD (3D Modeling & Kinematic Assembly), FDM 3D Printing (STL Generation), Microsoft Visio, Draw.io.'
-        )
-        add_bullet(
-            'Interpersonal & Languages: ',
-            'Public Speaking, Cross-Functional Team Leadership, Event Coordination; Indonesian (Native), English (Professional Working Proficiency).'
-        )
-
-    # --- Projects ---
-    add_heading('PROYEK TEKNIK INDUSTRI' if lang == 'id' else 'KEY ENGINEERING PROJECTS')
+    # --- Section: Experience & Projects (Key ATS Heading) ---
+    add_heading('PENGALAMAN KERJA & PROYEK' if lang == 'id' else 'WORK EXPERIENCE & PROJECTS')
 
     # Project 1
-    p_p1 = doc.add_paragraph()
-    p_p1.paragraph_format.space_before = Pt(4)
-    p_p1.paragraph_format.space_after = Pt(2)
-    p_p1.paragraph_format.keep_with_next = True
+    add_entry_header(
+        'Additive Manufacturing & 3D Printing Prototyping Komponen Ragum' if lang == 'id' else 'Additive Manufacturing & 3D Printing Prototyping',
+        'Laboratorium Small Scale Manufacturing (SSML) ITENAS' if lang == 'id' else 'Small Scale Manufacturing Lab (SSML) ITENAS',
+        'September 2025 – Oktober 2025' if lang == 'id' else 'September 2025 – October 2025'
+    )
     if lang == 'id':
-        p_p1.add_run('1. Additive Manufacturing & 3D Printing Prototyping Komponen Ragum').bold = True
-        p_p1.add_run(' | Lab SSML ITENAS')
-        add_bullet(
-            '',
-            'Merancang komponen mekanikal individual ragum kerja bangku (bench vise), mengonversi geometri CAD ke format STL, menentukan parameter proses cetak FDM (infill density, layer height), serta memetakan alur kerja sistematis melalui diagram alir proses manufaktur.'
-        )
+        add_bullet('Perancangan CAD & Optimasi Cetak: ', 'Merancang model 3D CAD komponen mekanikal ragum kerja bangku, mengonversi geometri ke format STL, dan mengoptimasi parameter proses cetak FDM (infill 20%, layer height 0.2 mm).')
+        add_bullet('Pemetaan Alur Proses: ', 'Menyusun diagram alir proses manufaktur aditif menggunakan Draw.io serta mengevaluasi toleransi deviasi dimensi hasil cetak filamen skala laboratorium.')
     else:
-        p_p1.add_run('1. Additive Manufacturing & 3D Printing Prototyping').bold = True
-        p_p1.add_run(' | SSML Lab ITENAS')
-        add_bullet(
-            '',
-            'Engineered individual mechanical CAD components for an industrial bench vise, optimized slicing process parameters (infill, layer height), and fabricated physical prototypes via FDM 3D printing with process flow diagramming.'
-        )
+        add_bullet('CAD & Slicing Optimization: ', 'Engineered 3D CAD mechanical components for an industrial bench vise, exported geometry to production STL formats, and optimized FDM printing parameters (20% infill, 0.2 mm layer height).')
+        add_bullet('Manufacturing Workflow: ', 'Formulated systematic manufacturing process flowcharts in Draw.io and inspected dimensional precision against CAD design tolerances.')
 
     # Project 2
-    p_p2 = doc.add_paragraph()
-    p_p2.paragraph_format.space_before = Pt(3)
-    p_p2.paragraph_format.space_after = Pt(2)
-    p_p2.paragraph_format.keep_with_next = True
+    add_entry_header(
+        '3D Mechanical Assembly & ISO Standard Engineering Drawing Ragum SSML' if lang == 'id' else '3D Mechanical Assembly & ISO Standard Engineering Drawing',
+        'Laboratorium Small Scale Manufacturing (SSML) ITENAS' if lang == 'id' else 'Small Scale Manufacturing Lab (SSML) ITENAS',
+        'Oktober 2025 – November 2025' if lang == 'id' else 'October 2025 – November 2025'
+    )
     if lang == 'id':
-        p_p2.add_run('2. 3D Mechanical Assembly & ISO Standard Engineering Drawing Ragum SSML').bold = True
-        p_p2.add_run(' | Lab SSML ITENAS')
-        add_bullet(
-            '',
-            'Memodelkan rakitan mekanikal 3D (assembly) utuh 10+ part ragum pada SolidWorks dengan batasan suaian (mating). Menyusun lembar gambar kerja teknik 2D berstandar ISO lengkap dengan proyeksi ortogonal, penampang potong, etiket, Bill of Materials (BOM), dan toleransi geometris (GD&T).'
-        )
+        add_bullet('Pemodelan Rakitan Kinematika: ', 'Membangun rakitan mekanis 3D utuh berisi 10+ komponen pada SolidWorks dengan batasan suaian (mating) dan validasi kinematika gerakan ulir penggerak.')
+        add_bullet('Dokumentasi ISO & Gambar Kerja: ', 'Menyusun dokumentasi lembar gambar kerja 2D berstandar ISO lengkap dengan proyeksi ortogonal, potongan penampang, Bill of Materials (BOM), dan toleransi geometris (GD&T).')
     else:
-        p_p2.add_run('2. 3D Mechanical Assembly & ISO Standard Engineering Drawing').bold = True
-        p_p2.add_run(' | SSML Lab ITENAS')
-        add_bullet(
-            '',
-            'Modeled 10+ part mechanical assembly of a precision bench vise mechanism using SolidWorks with kinematic mate constraints, drafting ISO-standard 2D fabrication blueprints, BOM, and GD&T specifications.'
-        )
+        add_bullet('3D Kinematic Assembly: ', 'Constructed a comprehensive 10+ part mechanical assembly of a precision bench vise in SolidWorks, implementing concentric and distance mates to validate mechanical kinematic motion.')
+        add_bullet('ISO Technical Blueprints: ', 'Drafted ISO-standard 2D manufacturing drawings featuring orthogonal projections, section views, Bill of Materials (BOM), and GD&T geometric tolerance specifications.')
 
     # Project 3
-    p_p3 = doc.add_paragraph()
-    p_p3.paragraph_format.space_before = Pt(3)
-    p_p3.paragraph_format.space_after = Pt(2)
-    p_p3.paragraph_format.keep_with_next = True
+    add_entry_header(
+        'Statistika Deskriptif & Pengendalian Variasi Mutu Bobot Produk Manufaktur' if lang == 'id' else 'Descriptive Statistics & Manufacturing QC Variance Analysis',
+        'Laboratorium Komputasi Industri & Sistem Informasi (LKISI) ITENAS' if lang == 'id' else 'Industrial Computing & Info Systems Lab (LKISI) ITENAS',
+        'November 2025 – Desember 2025' if lang == 'id' else 'November 2025 – December 2025'
+    )
     if lang == 'id':
-        p_p3.add_run('3. Statistika Deskriptif & Pengendalian Variasi Mutu Bobot Produk Manufaktur').bold = True
-        p_p3.add_run(' | Lab LKISI ITENAS')
-        add_bullet(
-            '',
-            'Membangun skrip otomasi pengolahan data menggunakan Python (Pandas/NumPy) untuk evaluasi parameter tendensi sentral (Mean, Median, Modus) dan dispersi data (Variansi, Standar Deviasi, Kuantil, Boxplot) guna mendeteksi anomali variasi bobot produk manufaktur.'
-        )
+        add_bullet('Otomasi Analisis Data Python: ', 'Mengembangkan skrip otomasi pengolahan data menggunakan Python (Pandas & NumPy) untuk menganalisis 100+ sampel variasi bobot produk manufaktur dari lini produksi.')
+        add_bullet('Evaluasi Metrik Mutu & Outlier: ', 'Mengalkulasi nilai tendensi sentral (Mean, Median, Modus), dispersi (Variansi, Standar Deviasi), serta memvisualisasikan skewness dan outlier melalui Boxplot Matplotlib.')
     else:
-        p_p3.add_run('3. Descriptive Statistics & Manufacturing QC Variance Analysis').bold = True
-        p_p3.add_run(' | LKISI Lab ITENAS')
-        add_bullet(
-            '',
-            'Formulated an automated Python (Pandas/NumPy) pipeline to evaluate central tendency, product weight variance, and distribution parameters (skewness, kurtosis, boxplots) for manufacturing quality control inspection.'
-        )
+        add_bullet('Automated Data Pipeline: ', 'Developed Python data analysis scripts (Pandas/NumPy) to assess weight variances across 100+ manufacturing production batch records.')
+        add_bullet('Dispersion & Quality Metrics: ', 'Evaluated central tendency (Mean, Median, Mode), variance, standard deviation, and quantiles; generated Boxplots and distribution metrics to identify production outliers.')
 
     # Project 4
-    p_p4 = doc.add_paragraph()
-    p_p4.paragraph_format.space_before = Pt(3)
-    p_p4.paragraph_format.space_after = Pt(2)
-    p_p4.paragraph_format.keep_with_next = True
+    add_entry_header(
+        'Simulasi Distribusi Sampling & Validasi Empiris Central Limit Theorem' if lang == 'id' else 'Sampling Distribution Simulation & Central Limit Theorem Validation',
+        'Laboratorium Komputasi Industri & Sistem Informasi (LKISI) ITENAS' if lang == 'id' else 'Industrial Computing & Info Systems Lab (LKISI) ITENAS',
+        'Desember 2025 – Januari 2026' if lang == 'id' else 'December 2025 – January 2026'
+    )
     if lang == 'id':
-        p_p4.add_run('4. Simulasi Distribusi Sampling & Validasi Empiris Central Limit Theorem').bold = True
-        p_p4.add_run(' | Lab LKISI ITENAS')
-        add_bullet(
-            '',
-            'Memodelkan simulasi komputasional distribusi sampling rata-rata bertingkat (N=2, 5, 10) berbasis Python. Menerapkan Aturan Sturges untuk penentuan kelas interval frekuensi serta membuktikan secara empiris konvergensi bentuk distribusi menuju kurva normal standar (CLT).'
-        )
+        add_bullet('Simulasi Sampling Komputasional: ', 'Memodelkan simulasi komputasional distribusi sampling rata-rata berbasis Python pada berbagai skenario ukuran sampel (N=2, N=5, N=10) dari data operasional.')
+        add_bullet('Validasi Teorema Limit Pusat: ', 'Menerapkan Aturan Sturges untuk pembagian kelas frekuensi dan membuktikan secara empiris konvergensi bentuk kurva menuju distribusi normal standar.')
     else:
-        p_p4.add_run('4. Sampling Distribution Simulation & Central Limit Theorem Validation').bold = True
-        p_p4.add_run(' | LKISI Lab ITENAS')
-        add_bullet(
-            '',
-            'Programmed multi-sample empirical simulations (N=2, 5, 10) using Sturges Rule binning and Matplotlib histograms to empirically demonstrate and validate Central Limit Theorem (CLT) convergence on operational data.'
-        )
+        add_bullet('Empirical Sampling Modeling: ', 'Programmed computational sampling distribution simulations in Python across multi-sample regimes (N=2, N=5, N=10) to analyze operational population statistics.')
+        add_bullet('Central Limit Theorem Proof: ', 'Implemented Sturges Rule binning and Matplotlib histogram plotting to demonstrate mathematical convergence toward standard normal distributions.')
 
     # Project 5
-    p_p5 = doc.add_paragraph()
-    p_p5.paragraph_format.space_before = Pt(3)
-    p_p5.paragraph_format.space_after = Pt(2)
-    p_p5.paragraph_format.keep_with_next = True
+    add_entry_header(
+        'Pengembangan Sistem Otomasi POS & Transaksi Loyalitas Pelanggan' if lang == 'id' else 'Automated Retail POS & Customer Loyalty Transaction System',
+        'Laboratorium Komputasi Industri & Sistem Informasi (LKISI) ITENAS' if lang == 'id' else 'Industrial Computing & Info Systems Lab (LKISI) ITENAS',
+        'Januari 2026 – Februari 2026' if lang == 'id' else 'January 2026 – February 2026'
+    )
     if lang == 'id':
-        p_p5.add_run('5. Pengembangan Sistem Otomasi POS & Transaksi Loyalitas Pelanggan').bold = True
-        p_p5.add_run(' | Lab LKISI ITENAS')
-        add_bullet(
-            '',
-            'Memodelkan alur proses transaksi POS retail ke dalam diagram alir terstruktur menggunakan MS Visio. Mengimplementasikan program kalkulasi transaksi kasir berbasis Python dengan algoritma percabangan bersyarat, validasi format data, diskon keanggotaan loyalitas, dan pembuatan kode unik transaksi.'
-        )
+        add_bullet('Arsitektur Alur Proses: ', 'Memodelkan sistem alur transaksi kasir retail multi-kondisi ke dalam diagram alir (flowchart) terstruktur menggunakan Microsoft Visio.')
+        add_bullet('Pengembangan Engine Transaksi: ', 'Membangun program CLI transaksi kasir berbasis Python dengan logika diskon bertingkat (cashback 8%), validasi format input, dan penerbitan ID transaksi unik.')
     else:
-        p_p5.add_run('5. Automated Retail POS & Customer Loyalty Transaction System').bold = True
-        p_p5.add_run(' | LKISI Lab ITENAS')
-        add_bullet(
-            '',
-            'Designed system flowcharts in MS Visio and implemented a Python CLI checkout engine featuring multi-condition branching, automated unique order token generation, and customer loyalty cashback calculations.'
-        )
+        add_bullet('System Architecture: ', 'Architected structured retail checkout process flowcharts in Microsoft Visio mapping multi-tier transactional logic and customer membership rules.')
+        add_bullet('Python Checkout Engine: ', 'Built a Python-based order fulfillment script with conditional logic branches, automated transaction ID hashing, input validation, and real-time loyalty cashback calculation.')
 
-    # --- Certifications ---
-    add_heading('SERTIFIKASI & KREDENSIAL' if lang == 'id' else 'CERTIFICATIONS & CREDENTIALS')
-    certs = [
-        ('Google Data Analytics Course', 'Google Skillshop', '2025', 'CERT-GGL-DATA-2025'),
-        ('AI for Everyone', 'AI Competency Certification', '2025', 'CERT-AI-EVERYONE-2025'),
-        ('Memulai Pemrograman dengan Python' if lang == 'id' else 'Programming with Python', 'Dicoding Academy', '2025', 'CERT-DCD-PYTHON-2025'),
-        ('BIG FAIR CAYE ASEAN 2026 (Singapore & Malaysia)', 'CAYE ASEAN • BIG FAIR', '2026', 'CERT-CAYE-ASEAN-2026'),
-        ('Human Capital Excellence & Public Speaking', 'BIG FAIR ITENAS', '2025', 'CERT-HC-BIGFAIR-2025'),
-        ('Introduction to Financial Literacy', 'Dicoding Academy', '2025', 'CERT-DCD-FIN-2025'),
-        ('POLBAN Entrepreneur Day 2025', 'Politeknik Negeri Bandung', '2025', 'CERT-POLBAN-ENT-2025'),
-        ('Active Membership Certification', 'Google Developer Groups (GDG) On Campus', '2025', 'CERT-GDG-CAMPUS-2025'),
+    # --- Section: Leadership & Organizational Experience ---
+    add_heading('PENGALAMAN ORGANISASI & KEPEMIMPINAN' if lang == 'id' else 'LEADERSHIP EXPERIENCE')
+    if lang == 'id':
+        add_entry_header(
+            'Google Developer Groups (GDG) On Campus ITENAS',
+            'Anggota Aktif (Active Member)',
+            'Oktober 2025 – Sekarang'
+        )
+        add_bullet('', 'Berpartisipasi aktif dalam lokakarya teknologi komputasi awan, eksplorasi ekosistem pengembang Google, dan kolaborasi proyek inovasi digital mahasiswa lintas jurusan.')
+
+        add_entry_header(
+            'Kepanitiaan Program BIG FAIR ITENAS',
+            'Divisi Human Capital, Public Speaking & Content Creator',
+            'Agustus 2025 – Januari 2026'
+        )
+        add_bullet('', 'Mengoordinasikan puluhan relawan mahasiswa dan memproduksi materi komunikasi publik yang menjangkau ribuan audiens; dianugerahi sertifikat Human Capital Excellence.')
+
+        add_entry_header(
+            'Delegasi BIG FAIR CAYE ASEAN (Singapura & Malaysia)',
+            'Delegasi Pemuda Internasional',
+            'Februari 2026 – Februari 2026'
+        )
+        add_bullet('', 'Mewakili kontingen mahasiswa dalam forum pertukaran wawasan kewirausahaan dan industri pemuda ASEAN guna memperluas jejaring profesional internasional.')
+    else:
+        add_entry_header(
+            'Google Developer Groups (GDG) On Campus ITENAS',
+            'Active Member',
+            'October 2025 – Present'
+        )
+        add_bullet('', 'Actively participated in technology enablement sessions, Google Cloud developer ecosystems exploration, and student digital innovation initiatives across multidisciplinary teams.')
+
+        add_entry_header(
+            'BIG FAIR ITENAS Committee',
+            'Human Capital, Public Speaking & Content Creator',
+            'August 2025 – January 2026'
+        )
+        add_bullet('', 'Coordinated volunteer operations, delivered public presentations, and developed digital outreach content reaching regional audiences; awarded Human Capital Excellence.')
+
+        add_entry_header(
+            'CAYE ASEAN Delegation (Singapore & Malaysia)',
+            'International Youth Delegate',
+            'February 2026 – February 2026'
+        )
+        add_bullet('', 'Represented university delegation in youth enterprise summits across Singapore and Malaysia, broadening international industrial networking and supply chain perspectives.')
+
+    # --- Section: Skills ---
+    add_heading('KEAHLIAN TEKNIS' if lang == 'id' else 'TECHNICAL SKILLS')
+    if lang == 'id':
+        add_bullet('Kompetensi Teknik Industri: ', 'Perancangan Tata Letak Pabrik (Plant Layout & ARC), Analisis Ergonomi (RULA & REBA), Pengendalian Persediaan (EOQ, ROP, Safety Stock), Toleransi Geometris (GD&T), Bill of Materials (BOM).')
+        add_bullet('Analisis Data & Pemrograman: ', 'Google Data Analytics, Pemrograman Python (Pandas, NumPy, Matplotlib), Pemodelan Spreadsheet / Excel, Pengendalian Mutu Statistika (SQC), Teorema Limit Pusat.')
+        add_bullet('Software Desain & Manufaktur: ', 'SolidWorks CAD (3D Part Modeling & Assembly), Slicing 3D Printing (STL), Microsoft Visio (Pemodelan Flowchart), Draw.io.')
+        add_bullet('Bahasa & Komunikasi: ', 'Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Tingkat Profesional); Public Speaking, Komunikasi Tim Multidisiplin.')
+    else:
+        add_bullet('Industrial Engineering: ', 'Facility Layout Optimization (ARC), Ergonomic Risk Assessment (RULA/REBA), Inventory Modeling (EOQ, ROP, Safety Stock), Geometric Dimensioning & Tolerancing (GD&T), Bill of Materials (BOM).')
+        add_bullet('Data Analytics & Programming: ', 'Google Data Analytics, Python Programming (Pandas, NumPy, Matplotlib), Advanced Spreadsheet Modeling, Statistical Quality Control (SQC), Central Limit Theorem.')
+        add_bullet('Engineering Software: ', 'SolidWorks CAD (3D Modeling & Kinematic Assembly), FDM 3D Printing Slicing (STL), Microsoft Visio (Process Flowcharting), Draw.io.')
+        add_bullet('Languages & Soft Skills: ', 'Indonesian (Native), English (Professional Working Proficiency); Public Speaking, Technical Documentation, Cross-Functional Team Leadership.')
+
+    # --- Section: Certifications ---
+    add_heading('SERTIFIKASI & PELATIHAN' if lang == 'id' else 'CERTIFICATIONS')
+    certs_id = [
+        ('Google Data Analytics Professional Certificate', 'Google Skillshop', 'Juli 2025'),
+        ('AI for Everyone: Master the Basics', 'AI Competency Certification', 'Agustus 2025'),
+        ('Memulai Pemrograman dengan Python', 'Dicoding Academy', 'September 2025'),
+        ('Introduction to Financial Literacy', 'Dicoding Academy', 'Oktober 2025'),
+        ('Human Capital Excellence & Public Speaking', 'BIG FAIR ITENAS', 'November 2025'),
+        ('Active Membership Credential', 'Google Developer Groups (GDG) On Campus', 'Oktober 2025'),
+        ('BIG FAIR CAYE ASEAN Youth Delegate 2026', 'CAYE ASEAN (Singapura & Malaysia)', 'Februari 2026'),
+        ('POLBAN Entrepreneur Day 2025', 'Politeknik Negeri Bandung', 'Mei 2025')
     ]
-    for c_title, c_issuer, c_year, c_id in certs:
-        add_bullet(f'{c_title} – {c_issuer} ({c_year})', f' | Doc ID: {c_id}')
-
-    # --- Leadership / Organizations ---
-    add_heading('PENGALAMAN ORGANISASI' if lang == 'id' else 'ORGANIZATIONAL & LEADERSHIP EXPERIENCE')
-    if lang == 'id':
-        p_o1 = doc.add_paragraph()
-        p_o1.paragraph_format.space_before = Pt(3)
-        p_o1.paragraph_format.space_after = Pt(2)
-        p_o1.paragraph_format.keep_with_next = True
-        p_o1.add_run('Google Developer Groups (GDG) On Campus ITENAS').bold = True
-        p_o1.add_run(' | Active Member (2025 – Sekarang)')
-        add_bullet(
-            '',
-            'Terlibat aktif dalam lokakarya teknologi, pengenalan ekosistem komputasi Google, dan kolaborasi pengembangan solusi digital bersama komunitas kampus.'
-        )
-
-        p_o2 = doc.add_paragraph()
-        p_o2.paragraph_format.space_before = Pt(3)
-        p_o2.paragraph_format.space_after = Pt(2)
-        p_o2.paragraph_format.keep_with_next = True
-        p_o2.add_run('Kepanitiaan BIG FAIR ITENAS').bold = True
-        p_o2.add_run(' | Divisi Human Capital & Content Creator (2025 – 2026)')
-        add_bullet(
-            '',
-            'Mengelola koordinasi sumber daya manusia relawan, memfasilitasi sesi komunikasi publik, dan memproduksi konten informasi program berskala regional.'
-        )
-
-        p_o3 = doc.add_paragraph()
-        p_o3.paragraph_format.space_before = Pt(3)
-        p_o3.paragraph_format.space_after = Pt(2)
-        p_o3.paragraph_format.keep_with_next = True
-        p_o3.add_run('Delegasi BIG FAIR CAYE ASEAN 2026 (Singapore & Malaysia)').bold = True
-        p_o3.add_run(' | Delegasi Internasional (2026)')
-        add_bullet(
-            '',
-            'Berpartisipasi dalam agenda pertukaran wawasan kewirausahaan dan industri pemuda lintas negara ASEAN, memperluas jejaring profesional di Singapura dan Malaysia.'
-        )
-    else:
-        p_o1 = doc.add_paragraph()
-        p_o1.paragraph_format.space_before = Pt(3)
-        p_o1.paragraph_format.space_after = Pt(2)
-        p_o1.paragraph_format.keep_with_next = True
-        p_o1.add_run('Google Developer Groups (GDG) On Campus ITENAS').bold = True
-        p_o1.add_run(' | Active Member (2025 – Present)')
-        add_bullet(
-            '',
-            'Actively participated in technology enablement sessions, Google developer ecosystems exploration, and student digital innovation initiatives.'
-        )
-
-        p_o2 = doc.add_paragraph()
-        p_o2.paragraph_format.space_before = Pt(3)
-        p_o2.paragraph_format.space_after = Pt(2)
-        p_o2.paragraph_format.keep_with_next = True
-        p_o2.add_run('BIG FAIR ITENAS Committee').bold = True
-        p_o2.add_run(' | Human Capital & Content Creator (2025 – 2026)')
-        add_bullet(
-            '',
-            'Coordinated volunteer human capital operations, delivered public speaking presentations, and developed digital outreach content.'
-        )
-
-        p_o3 = doc.add_paragraph()
-        p_o3.paragraph_format.space_before = Pt(3)
-        p_o3.paragraph_format.space_after = Pt(2)
-        p_o3.paragraph_format.keep_with_next = True
-        p_o3.add_run('CAYE ASEAN Delegation (Singapore & Malaysia)').bold = True
-        p_o3.add_run(' | International Delegate (2026)')
-        add_bullet(
-            '',
-            'Represented youth enterprise delegate in cross-border innovation and industrial networking summits across Singapore and Malaysia.'
-        )
+    certs_en = [
+        ('Google Data Analytics Professional Certificate', 'Google Skillshop', 'July 2025'),
+        ('AI for Everyone: Master the Basics', 'AI Competency Certification', 'August 2025'),
+        ('Programming with Python', 'Dicoding Academy', 'September 2025'),
+        ('Introduction to Financial Literacy', 'Dicoding Academy', 'October 2025'),
+        ('Human Capital Excellence & Public Speaking', 'BIG FAIR ITENAS', 'November 2025'),
+        ('Active Membership Credential', 'Google Developer Groups (GDG) On Campus', 'October 2025'),
+        ('BIG FAIR CAYE ASEAN Youth Delegate 2026', 'CAYE ASEAN (Singapore & Malaysia)', 'February 2026'),
+        ('POLBAN Entrepreneur Day 2025', 'Politeknik Negeri Bandung', 'May 2025')
+    ]
+    certs = certs_id if lang == 'id' else certs_en
+    for c_title, c_issuer, c_date in certs:
+        add_bullet(f'{c_title} – {c_issuer}', f' ({c_date})')
 
     doc.save(filename)
     print(f'Generated: {filename} ({os.path.getsize(filename)} bytes)')

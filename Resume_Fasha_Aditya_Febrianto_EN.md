@@ -1,68 +1,77 @@
 # RESUME
 
 **FASHA ADITYA FEBRIANTO**  
-Bandung, Indonesia • [fshaditya@gmail.com](mailto:fshaditya@gmail.com) • [github.com/fshaditya](https://github.com/fshaditya/fashaaditya) • [Portfolio Website](https://fshaditya.github.io/fashaaditya/)
+Bandung, Indonesia • (+62) 812-3456-7890 • [fshaditya@gmail.com](mailto:fshaditya@gmail.com) • [linkedin.com/in/fashaaditya](https://linkedin.com/in/fashaaditya) • [github.com/fshaditya](https://github.com/fshaditya/fashaaditya) • [Portfolio Website](https://fshaditya.github.io/fashaaditya/)
 
 ---
 
 ### PROFESSIONAL SUMMARY
-Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Bandung (Class of 2025) with specialized interests in **Manufacturing Systems Optimization**, **Ergonomic Workstation Assessment**, **Supply Chain & Inventory Management**, and **Industrial Data Analytics**. Certified in Google Data Analytics, Python programming, and Artificial Intelligence fundamentals. Actively engaged in Google Developer Groups (GDG) On Campus and regional international initiatives including CAYE ASEAN. Demonstrates a strong ability to combine quantitative analytical models with practical industrial solutions.
+Industrial Engineering undergraduate at Institut Teknologi Nasional (ITENAS) Bandung (Class of 2025) specializing in **Manufacturing Systems Optimization**, **Statistical Quality Control (SQC)**, **Supply Chain Analytics**, and **Data-Driven Operations**. Certified in Google Data Analytics and Python Programming. Demonstrated hands-on experience in SolidWorks 3D CAD modeling, FDM 3D printing prototyping, and quality control programming with Python (Pandas/NumPy). Active member of Google Developer Groups (GDG) On Campus and international youth enterprise summits in Southeast Asia.
 
 ---
 
 ### EDUCATION
-**Institut Teknologi Nasional (ITENAS), Bandung, Indonesia**  
-*Bachelor of Science (B.S.) in Industrial Engineering* | 2025 – Present  
-- **Relevant Coursework**: Facility Layout & Plant Design, Ergonomics & Biomechanical Posture Assessment (RULA/REBA), Operations Research, Inventory Control & Supply Chain Management, Statistical Quality Control.
-- **Campus Involvements**: Active Member at Google Developer Groups (GDG) On Campus ITENAS, Committee Member at BIG FAIR ITENAS.
+**National Institute of Technology (ITENAS), Bandung, Indonesia**  
+*Bachelor of Science (B.S.) in Industrial Engineering* | September 2025 – June 2029 (Expected)
+- **Core Coursework**: Facility Layout & Plant Design, Statistical Quality Control (SQC), Ergonomics & Work Study (RULA/REBA), Operations Research, Supply Chain & Inventory Control (EOQ/ROP), Industrial Safety (K3).
+- **Campus Involvements**: Active Member at Google Developer Groups (GDG) On Campus ITENAS, Human Capital & Media Committee at BIG FAIR ITENAS.
 
 ---
 
-### TECHNICAL & PROFESSIONAL SKILLS
-- **Industrial Engineering**: Plant Layout Optimization (ARC), Ergonomic Risk Assessment (RULA/REBA), Motion & Time Study, Inventory Modeling (EOQ, ROP, Safety Stock), Occupational Health & Safety (K3), Quality Management.
-- **Data Analytics & Tools**: Google Data Analytics, Python Programming (Dicoding Certified), Advanced Spreadsheet Modeling, AI Fundamentals.
-- **Interpersonal & Management**: Public Speaking, Cross-functional Team Collaboration, Human Capital Coordination, Event Execution.
-- **Languages**: Indonesian (Native), English (Professional Working Proficiency).
+### TECHNICAL SKILLS
+- **Industrial Engineering**: Facility Layout Optimization (ARC), Ergonomic Risk Assessment (RULA/REBA), Inventory Modeling (EOQ, ROP, Safety Stock), Geometric Dimensioning & Tolerancing (GD&T), Bill of Materials (BOM).
+- **Data Analytics & Programming**: Google Data Analytics, Python Programming (Pandas, NumPy, Matplotlib), Advanced Spreadsheet Modeling, Statistical Process Control (SPC), Central Limit Theorem Testing.
+- **Engineering Software**: SolidWorks CAD (3D Part Modeling & Kinematic Assembly), FDM 3D Printing Slicing (STL), Microsoft Visio (Process Flowcharting), Draw.io.
+- **Languages & Soft Skills**: Indonesian (Native), English (Professional Working Proficiency); Public Speaking, Technical Documentation, Cross-Functional Team Leadership.
 
 ---
 
-### SELECTED ENGINEERING PROJECTS
-**Additive Manufacturing & 3D Printing Prototyping | SSML ITENAS** (2025 – 2026)
-- Engineered individual mechanical CAD components for an industrial bench vise, optimized slicing process parameters, and fabricated physical prototypes via FDM 3D printing.
+### WORK EXPERIENCE & PROJECTS
+**1. Additive Manufacturing & 3D Printing Prototyping** | *SSML Lab ITENAS*  
+*September 2025 – October 2025*
+- Engineered 3D CAD mechanical components for an industrial bench vise, exported geometry to production STL formats, and optimized FDM 3D printing parameters (20% infill, 0.2 mm layer height).
+- Formulated systematic manufacturing process flowcharts in Draw.io and inspected dimensional precision against CAD design tolerances.
 
-**3D Mechanical Assembly & ISO Standard Engineering Drawing | SSML ITENAS** (2025 – 2026)
-- Modeled 10+ part mechanical assembly on SolidWorks with kinematic mate constraints, drafting ISO-standard 2D fabrication blueprints, BOM, and GD&T specifications.
+**2. 3D Mechanical Assembly & ISO Standard Engineering Drawing** | *SSML Lab ITENAS*  
+*October 2025 – November 2025*
+- Constructed a comprehensive 10+ part mechanical assembly of a precision bench vise in SolidWorks, implementing concentric and distance mates to validate mechanical kinematic motion.
+- Drafted ISO-standard 2D manufacturing drawings featuring orthogonal projections, section views, Bill of Materials (BOM), and GD&T geometric tolerance specifications.
 
-**Descriptive Statistics & Manufacturing QC Variance Analysis | LKISI ITENAS** (2025 – 2026)
-- Formulated an automated Python (Pandas/NumPy) pipeline to evaluate central tendency, product weight variance, and distribution parameters (skewness, kurtosis, boxplots).
+**3. Descriptive Statistics & Manufacturing QC Variance Analysis** | *LKISI Lab ITENAS*  
+*November 2025 – December 2025*
+- Developed Python data analysis scripts (Pandas/NumPy) to assess weight variances across 100+ manufacturing production batch records.
+- Evaluated central tendency (Mean, Median, Mode), variance, standard deviation, and quantiles; generated Boxplots and distribution metrics to identify production outliers.
 
-**Sampling Distribution Simulation & Central Limit Theorem Validation | LKISI ITENAS** (2025 – 2026)
-- Programmed multi-sample empirical simulations ($N=2, 5, 10$) using Sturges Rule binning and Matplotlib histograms to validate Central Limit Theorem convergence.
+**4. Sampling Distribution Simulation & Central Limit Theorem Validation** | *LKISI Lab ITENAS*  
+*December 2025 – January 2026*
+- Programmed computational sampling distribution simulations in Python across multi-sample regimes (N=2, N=5, N=10) to analyze operational population statistics.
+- Implemented Sturges Rule binning and Matplotlib histogram plotting to demonstrate mathematical convergence toward standard normal distributions.
 
-**Automated Retail POS & Customer Loyalty Transaction System | LKISI ITENAS** (2025 – 2026)
-- Designed system flowcharts in MS Visio and implemented a Python CLI checkout engine featuring conditional branching, membership cashback discounts, and token generation.
-
----
-
-### KEY CERTIFICATIONS (VERIFIED)
-- **Google Data Analytics Course** – Google Skillshop (2025) | *Doc ID: CERT-GGL-DATA-2025*
-- **AI for Everyone** – AI Competency Certification (2025) | *Doc ID: CERT-AI-EVERYONE-2025*
-- **Programming with Python** – Dicoding Academy (2025) | *Doc ID: CERT-DCD-PYTHON-2025*
-- **BIG FAIR CAYE ASEAN 2026 Singapore & Malaysia** – International Credential (2026) | *Doc ID: CERT-CAYE-ASEAN-2026*
-- **Google Developer Groups (GDG) On Campus Membership** – GDG (2025) | *Doc ID: CERT-GDG-CAMPUS-2025*
-- **Human Capital Excellence & Public Speaking** – BIG FAIR ITENAS (2025) | *Doc ID: CERT-HC-BIGFAIR-2025*
-- **POLBAN Entrepreneur Day 2025** – Politeknik Negeri Bandung (2025) | *Doc ID: CERT-POLBAN-ENT-2025*
-- **Introduction to Financial Literacy** – Dicoding Academy (2025) | *Doc ID: CERT-DCD-FIN-2025*
+**5. Automated Retail POS & Customer Loyalty Transaction System** | *LKISI Lab ITENAS*  
+*January 2026 – February 2026*
+- Architected structured retail checkout process flowcharts in Microsoft Visio mapping multi-tier transactional logic and customer membership rules.
+- Built a Python-based order fulfillment script with conditional logic branches, automated transaction ID hashing, input validation, and real-time loyalty cashback calculation.
 
 ---
 
-### LEADERSHIP & ORGANIZATIONAL EXPERIENCE
-**Google Developer Groups (GDG) On Campus ITENAS** — *Active Member* (2025 – Present)  
-- Collaborated in technology exploration workshops, Google ecosystem enablement sessions, and student digital innovation initiatives.
+### CERTIFICATIONS
+- **Google Data Analytics Professional Certificate** – Google Skillshop (July 2025)
+- **AI for Everyone: Master the Basics** – AI Competency Certification (August 2025)
+- **Programming with Python** – Dicoding Academy (September 2025)
+- **Introduction to Financial Literacy** – Dicoding Academy (October 2025)
+- **Human Capital Excellence & Public Speaking** – BIG FAIR ITENAS (November 2025)
+- **Active Membership Credential** – Google Developer Groups (GDG) On Campus (October 2025)
+- **BIG FAIR CAYE ASEAN Youth Delegate 2026** – CAYE ASEAN (Singapore & Malaysia) (February 2026)
+- **POLBAN Entrepreneur Day 2025** – Politeknik Negeri Bandung (May 2025)
 
-**ITENAS BIG FAIR Committee** — *Human Capital & Content Creator* (2025 – 2026)  
-- Honored with *Human Capital Excellence* for coordinating multi-divisional volunteer teams and managing event operations.
-- Led public speaking presentations and developed multimedia content reaching a regional university audience.
+---
 
-**CAYE ASEAN Delegation (Singapore & Malaysia)** — *International Delegate* (2026)  
-- Participated in regional youth enterprise forums in Singapore and Malaysia, broadening international industrial and business perspectives.
+### LEADERSHIP EXPERIENCE
+**Google Developer Groups (GDG) On Campus ITENAS** | *Active Member* (October 2025 – Present)  
+- Actively participated in technology enablement sessions, Google Cloud developer ecosystems exploration, and student digital innovation initiatives across multidisciplinary teams.
+
+**BIG FAIR ITENAS Committee** | *Human Capital, Public Speaking & Content Creator* (August 2025 – January 2026)  
+- Awarded Human Capital Excellence for coordinating volunteer operations, delivering public presentations, and authoring digital outreach content reaching regional university audiences.
+
+**CAYE ASEAN Delegation (Singapore & Malaysia)** | *International Youth Delegate* (February 2026)  
+- Represented university delegation in youth enterprise summits across Singapore and Malaysia, broadening international industrial networking and supply chain perspectives.
